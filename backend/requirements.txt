@@ -1,18 +1,66 @@
-flask
-flask-sqlalchemy
-flask-migrate
-flask-jwt-extended
-flask-cors
-flask-socketio
-psycopg2-binary
-python-dotenv
-eventlet
+# ============================================================
+# LearnQuest Backend - Requirements
+# Generated: 2026-02-21
+# Python 3.11+
+# Install with: pip install -r requirements.txt
+# ============================================================
 
-# RAG Dependencies
-langchain
-langchain-community
-langchain-openai
-chromadb
-pypdf
-openai
-tiktoken
+# --- Core Flask Framework ---
+Flask==3.1.1
+Werkzeug==3.1.5
+Jinja2==3.1.6
+click==8.1.9
+itsdangerous==2.2.0
+
+# --- Database ---
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.46
+Flask-Migrate==4.1.0
+alembic==1.14.2
+psycopg2-binary==2.9.11
+
+# --- Authentication & Security ---
+Flask-JWT-Extended==4.7.1
+PyJWT==2.10.1
+bcrypt==4.3.0
+
+# --- CORS ---
+Flask-Cors==5.0.1
+
+# --- Real-Time (Socket.IO / WebSockets) ---
+Flask-SocketIO==5.5.1
+python-socketio==5.16.0
+python-engineio==4.13.0
+eventlet==0.40.0
+simple-websocket==1.1.0
+bidict==0.23.1
+
+# --- Environment & Config ---
+python-dotenv==1.2.1
+
+# --- HTTP Requests ---
+requests==2.32.5
+urllib3==2.6.3
+certifi==2025.6.15
+
+# --- AI / LLM (RAG) ---
+langchain==0.3.25
+langchain-community==0.3.24
+langchain-core==0.3.60
+langchain-openai==0.3.14
+langchain-text-splitters==0.3.8
+openai==1.81.0
+tiktoken==0.9.0
+chromadb==0.6.4
+pypdf==5.6.0
+
+# --- Data & Utilities ---
+numpy==2.3.0
+packaging==25.0
+pydantic==2.11.5
+typing_extensions==4.15.0
+tenacity==9.1.2
+orjson==3.11.6
+PyYAML==6.0.2
+six==1.17.0
+tqdm==4.67.2
