@@ -1,0 +1,28 @@
+.dashboard-app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000033;
+    /* Darker space background behind the map */
+}
+
+/* Ensure the map takes up the remaining space */
+.world-map-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Hide context menus or other global overlays if needed */
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

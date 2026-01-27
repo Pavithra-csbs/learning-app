@@ -1,0 +1,18 @@
+flask
+flask-sqlalchemy
+flask-migrate
+flask-jwt-extended
+flask-cors
+flask-socketio
+psycopg2-binary
+python-dotenv
+eventlet
+
+# RAG Dependencies
+langchain
+langchain-community
+langchain-openai
+chromadb
+pypdf
+openai
+tiktoken

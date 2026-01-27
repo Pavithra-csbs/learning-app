@@ -1,0 +1,115 @@
+﻿python : C:\Users\mir
+un\OneDrive\Desktop\l
+earning_platform\back
+end\app\services\rag_
+service.py:93: LangCh
+ainDeprecationWarning
+: The class `Chroma` 
+was deprecated in 
+LangChain 0.2.9 and 
+will be removed in 
+1.0. An updated 
+version of the class 
+exists in the 
+`langchain-chroma 
+package and should 
+be used instead. To 
+use it run `pip 
+install -U 
+`langchain-chroma` 
+and import as `from 
+`langchain_chroma 
+import Chroma``.
+At line:1 char:1
++ python 
+ingest_ncert.py > 
+ingest.log 2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : 
+NotSpecified: (C    :
+\Users\mirun\...mpor 
+   t 
+Chroma``.:String) [  
+  ], RemoteException
+    + 
+FullyQualifiedError  
+  Id : 
+NativeCommandErr    
+or
+ 
+  self.vector_store 
+= Chroma(
+DEBUG: STAGE 1 - Starting Fresh Ingestion
+DEBUG: Target Key: NCERT_PDF_PATH
+DEBUG: Config Value: C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\ncert_pdfs
+DEBUG: Initializing Vector DB...
+DEBUG RAG: Loading Config...
+DEBUG RAG: App Config Keys: ['DEBUG', 'TESTING', 'PROPAGATE_EXCEPTIONS', 'SECRET_KEY', 'SECRET_KEY_FALLBACKS', 'PERMANENT_SESSION_LIFETIME', 'USE_X_SENDFILE', 'TRUSTED_HOSTS', 'SERVER_NAME', 'APPLICATION_ROOT', 'SESSION_COOKIE_NAME', 'SESSION_COOKIE_DOMAIN', 'SESSION_COOKIE_PATH', 'SESSION_COOKIE_HTTPONLY', 'SESSION_COOKIE_SECURE', 'SESSION_COOKIE_PARTITIONED', 'SESSION_COOKIE_SAMESITE', 'SESSION_REFRESH_EACH_REQUEST', 'MAX_CONTENT_LENGTH', 'MAX_FORM_MEMORY_SIZE', 'MAX_FORM_PARTS', 'SEND_FILE_MAX_AGE_DEFAULT', 'TRAP_BAD_REQUEST_ERRORS', 'TRAP_HTTP_EXCEPTIONS', 'EXPLAIN_TEMPLATE_LOADING', 'PREFERRED_URL_SCHEME', 'TEMPLATES_AUTO_RELOAD', 'MAX_COOKIE_SIZE', 'PROVIDE_AUTOMATIC_OPTIONS', 'BASE_DIR', 'GEMINI_API_KEY', 'JWT_SECRET_KEY', 'NCERT_PDF_PATH', 'OPENAI_API_KEY', 'SQLALCHEMY_DATABASE_URI', 'SQLALCHEMY_TRACK_MODIFICATIONS', 'VECTOR_DB_PATH', 'SQLALCHEMY_ENGINE_OPTIONS', 'SQLALCHEMY_ECHO', 'SQLALCHEMY_BINDS', 'SQLALCHEMY_RECORD_QUERIES', 'JWT_ACCESS_TOKEN_EXPIRES', 'JWT_ACCESS_COOKIE_NAME', 'JWT_ACCESS_COOKIE_PATH', 'JWT_ACCESS_CSRF_COOKIE_NAME', 'JWT_ACCESS_CSRF_COOKIE_PATH', 'JWT_ACCESS_CSRF_FIELD_NAME', 'JWT_ACCESS_CSRF_HEADER_NAME', 'JWT_ALGORITHM', 'JWT_COOKIE_CSRF_PROTECT', 'JWT_COOKIE_DOMAIN', 'JWT_COOKIE_SAMESITE', 'JWT_COOKIE_SECURE', 'JWT_CSRF_CHECK_FORM', 'JWT_CSRF_IN_COOKIES', 'JWT_CSRF_METHODS', 'JWT_DECODE_ALGORITHMS', 'JWT_DECODE_AUDIENCE', 'JWT_DECODE_ISSUER', 'JWT_DECODE_LEEWAY', 'JWT_ENCODE_AUDIENCE', 'JWT_ENCODE_ISSUER', 'JWT_ERROR_MESSAGE_KEY', 'JWT_HEADER_NAME', 'JWT_HEADER_TYPE', 'JWT_IDENTITY_CLAIM', 'JWT_JSON_KEY', 'JWT_PRIVATE_KEY', 'JWT_PUBLIC_KEY', 'JWT_QUERY_STRING_NAME', 'JWT_QUERY_STRING_VALUE_PREFIX', 'JWT_REFRESH_COOKIE_NAME', 'JWT_REFRESH_COOKIE_PATH', 'JWT_REFRESH_CSRF_COOKIE_NAME', 'JWT_REFRESH_CSRF_COOKIE_PATH', 'JWT_REFRESH_CSRF_FIELD_NAME', 'JWT_REFRESH_CSRF_HEADER_NAME', 'JWT_REFRESH_JSON_KEY', 'JWT_REFRESH_TOKEN_EXPIRES', 'JWT_SESSION_COOKIE', 'JWT_TOKEN_LOCATION', 'JWT_VERIFY_SUB', 'JWT_ENCODE_NBF']
+DEBUG RAG: Key found in config: True
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Scanning for PDFs in: C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\ncert_pdfs
+DEBUG: Found 12 PDFs
+DEBUG: Working on: maths 6th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: maths 7th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: maths 8th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: maths 9th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: science 6th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: science 7th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: science 8th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: science 9th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: social 6th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: social science 7th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: social science 8th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}
+DEBUG: Working on: social science 9th.pdf
+DEBUG RAG: Initializing Chroma at C:\Users\mirun\OneDrive\Desktop\learning_platform\backend\data\vector_db
+DEBUG RAG: chromadb import success
+DEBUG RAG: Chroma instance created successfully
+DEBUG: Result: {'error': 'Vector DB not initialized. Check API Key.'}

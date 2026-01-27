@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f7f1e3;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Global Floating Toys & Decorations */
+body::before,
+body::after {
+    content: '🧸';
+    position: fixed;
+    font-size: 3rem;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -100;
+    animation: globalFloat 10s ease-in-out infinite;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+body::before {
+    top: 10%;
+    left: 5%;
+}
+
+body::after {
+    content: '🎨';
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+/* Floating Stars */
+.star-bg {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.1;
+    z-index: -99;
+    animation: globalFloat 15s linear infinite;
+}
+
+/* More floating elements via a container or more pseudo-elements if needed */
+/* For now, let's add a few more persistent ones */
+
+@keyframes globalFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -50px) rotate(10deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(-10deg);
+    }
+}
+
+.game-card {
+    @apply bg-white rounded-2xl shadow-lg border-b-4 border-gray-200 hover:-translate-y-1 hover:border-b-8 transition-all duration-300;
+}
+
+.game-btn {
+    @apply px-6 py-2 rounded-full font-bold text-white shadow-md transform hover:scale-105 transition-transform;
+}
