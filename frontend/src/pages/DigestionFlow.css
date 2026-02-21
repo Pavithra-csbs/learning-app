@@ -1,0 +1,248 @@
+.df-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a0e05, #2d1808);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.df-header {
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.df-header h1 {
+    font-size: 1.4rem;
+}
+
+.df-stats {
+    font-weight: 700;
+    color: #fb923c;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.df-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.instruction {
+    font-size: 1rem;
+    color: #fbbf24;
+    text-align: center;
+}
+
+.flow-canvas {
+    max-width: 680px;
+    width: 100%;
+}
+
+.flow-slots {
+    display: flex;
+    flex-direction: column;
+}
+
+.flow-slot-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.flow-connector {
+    font-size: 1.5rem;
+    color: #f97316;
+    padding-left: 1.5rem;
+    line-height: 1;
+}
+
+.flow-slot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    min-height: 52px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.flow-slot.filled {
+    border-style: solid;
+}
+
+.flow-slot.correct {
+    background: rgba(34, 197, 94, 0.2) !important;
+    border-color: #22c55e !important;
+}
+
+.flow-slot.wrong {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: #ef4444 !important;
+}
+
+.flow-slot.empty {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.slot-num {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 700;
+    min-width: 20px;
+}
+
+.slot-content {
+    flex: 1;
+}
+
+.slot-step {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.slot-detail {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.slot-placeholder {
+    font-size: 0.8rem;
+    color: #475569;
+    font-style: italic;
+}
+
+.remove-btn {
+    position: absolute;
+    right: 0.5rem;
+    background: rgba(239, 68, 68, 0.3);
+    border: none;
+    color: #f87171;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+}
+
+.pool-section {
+    max-width: 680px;
+    width: 100%;
+}
+
+.pool-section h3 {
+    color: #fb923c;
+    margin-bottom: 0.75rem;
+}
+
+.pool-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pool-step {
+    padding: 0.5rem 1rem;
+    border: 2px solid;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.pool-step.selected {
+    background: rgba(251, 146, 60, 0.2);
+    transform: scale(1.06);
+}
+
+.df-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.add-btn {
+    background: rgba(251, 146, 60, 0.3);
+    border: 1px solid #f97316;
+    color: #fb923c;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.check-btn {
+    background: linear-gradient(135deg, #16a34a, #4ade80);
+    color: #052e16;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.df-container.done {
+    align-items: center;
+    justify-content: center;
+}
+
+.result-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+}
+
+.result-box h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.final-score {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fb923c;
+    margin: 1rem 0;
+}
+
+.motivation {
+    font-size: 1.1rem;
+    color: #fed7aa;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #16a34a, #4ade80);
+    color: #052e16;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}

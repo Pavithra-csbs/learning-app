@@ -1,0 +1,227 @@
+.boss-game-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.digital-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 80%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 50px 50px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 50px 50px;
+    opacity: 0.3;
+}
+
+.boss-header {
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    position: relative;
+    z-index: 10;
+}
+
+.battle-timer {
+    background: #ef4444;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 900;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.score-counter {
+    background: #3b82f6;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+}
+
+.boss-arena {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.boss-overlay {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 3px solid #3b82f6;
+    max-width: 600px;
+    box-shadow: 0 0 100px rgba(59, 130, 246, 0.3);
+}
+
+.boss-avatar {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.battle-zone {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.boss-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.boss-hp-bar {
+    width: 100%;
+}
+
+.boss-hp-bar label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #ef4444;
+    letter-spacing: 2px;
+}
+
+.hp-track {
+    height: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.hp-fill {
+    height: 100%;
+    background: #ef4444;
+    box-shadow: 0 0 15px #ef4444;
+}
+
+.boss-sprite {
+    font-size: 150px;
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.5));
+}
+
+.trial-card {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 40px;
+    border-radius: 30px;
+    border-left: 10px solid #3b82f6;
+    backdrop-filter: blur(10px);
+}
+
+.trial-header {
+    font-size: 0.7rem;
+    color: #3b82f6;
+    letter-spacing: 3px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.trial-question {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+.trial-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.trial-opt-btn {
+    padding: 20px;
+    background: #1e293b;
+    border: 2px solid #334155;
+    color: white;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trial-opt-btn:hover:not(:disabled) {
+    background: #334155;
+    transform: translateY(-5px);
+}
+
+.trial-feedback {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.trial-feedback.success {
+    background: #065f46;
+    color: #10b981;
+}
+
+.trial-feedback.error {
+    background: #7f1d1d;
+    color: #ef4444;
+}
+
+.trial-tip {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+.victory-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.victory-stats .stat {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #3b82f6;
+}
+
+.victory-stats .stars {
+    font-size: 2rem;
+}
+
+.victory-stats .badge-name {
+    color: #f59e0b;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.badge-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.finish-btn,
+.start-btn {
+    padding: 15px 40px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+}

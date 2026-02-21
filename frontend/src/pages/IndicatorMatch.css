@@ -1,0 +1,91 @@
+.match-game-container {
+    background: #0d0015;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+}
+
+.match-view {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.challenge-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 30px;
+    margin-bottom: 4rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.challenge-card .icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.challenge-card h2 {
+    font-size: 2.5rem;
+    color: #f72585;
+    margin-bottom: 1rem;
+}
+
+.challenge-card p {
+    font-size: 1.5rem;
+    color: #cbd5e0;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.color-btn {
+    padding: 2rem;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.red {
+    background: #ff3b30;
+    color: #fff;
+}
+
+.blue {
+    background: #007aff;
+    color: #fff;
+}
+
+.pink {
+    background: #ff2d55;
+    color: #fff;
+}
+
+.yellow {
+    background: #ffcc00;
+    color: #000;
+}
+
+.colorless {
+    background: #e5e7eb;
+    color: #000;
+}
+
+.green {
+    background: #34c759;
+    color: #fff;
+}
+
+.color-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}

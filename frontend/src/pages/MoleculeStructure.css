@@ -1,0 +1,192 @@
+.molecule-struct-container {
+    background: radial-gradient(circle at center, #0f172a, #000);
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.struct-arena {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.instruction {
+    color: #94a3b8;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+.workspace {
+    width: 600px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.molecule-center {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carbon-atom {
+    width: 50px;
+    height: 50px;
+    background: #334155;
+    border: 3px solid #94a3b8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-weight: 800;
+    font-size: 1.5rem;
+    z-index: 10;
+    box-shadow: 0 0 15px rgba(148, 163, 184, 0.3);
+}
+
+.bonds-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.linear-bond {
+    height: 6px;
+    background: #64748b;
+    border-radius: 3px;
+}
+
+.double-bond {
+    height: 12px;
+    border-top: 4px solid #64748b;
+    border-bottom: 4px solid #64748b;
+    background: transparent;
+}
+
+.ring-bond {
+    width: 200px;
+    height: 200px;
+    border: 6px solid #64748b;
+    border-radius: 50%;
+    /* Simplified hexagon as circle for MVP bond lines */
+    box-sizing: border-box;
+}
+
+.h-slot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: all 0.3s;
+    z-index: 15;
+}
+
+.h-slot.empty {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.h-slot.empty:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    color: #fff;
+}
+
+.h-slot.filled {
+    background: #fff;
+    color: #0f172a;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.controls {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.atom-source {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+}
+
+.source-icon {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.hint-btn {
+    background: transparent;
+    border: 1px solid #fbbf24;
+    color: #fbbf24;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.hint-btn:hover {
+    background: rgba(251, 191, 36, 0.1);
+}
+
+.victory-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.victory-screen h1 {
+    font-size: 3rem;
+    color: #4ade80;
+}
+
+.next-btn {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}

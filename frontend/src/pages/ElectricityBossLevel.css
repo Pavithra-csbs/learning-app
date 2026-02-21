@@ -1,0 +1,358 @@
+.boss-intro-container {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1e1b4b, #020617);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.boss-profile {
+    text-align: center;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 60px;
+    border-radius: 40px;
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.4);
+}
+
+.boss-avatar {
+    font-size: 6rem;
+    margin-bottom: 20px;
+}
+
+.boss-profile h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.boss-quote {
+    font-style: italic;
+    color: #94a3b8;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.start-boss-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-boss-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #3b82f6;
+}
+
+.boss-arena-container {
+    width: 100vw;
+    min-height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.boss-hud {
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    border-bottom: 2px solid #1e293b;
+}
+
+.health-bar-container {
+    width: 300px;
+}
+
+.health-bar-container label {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: #64748b;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.health-bar {
+    height: 12px;
+    background: #1e293b;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #334155;
+}
+
+.health-fill {
+    height: 100%;
+    background: #ef4444;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.health-fill.boss {
+    background: #3b82f6;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+.timer-display {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fbbf24;
+}
+
+.boss-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    padding: 40px;
+    gap: 40px;
+}
+
+.professor-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.professor-sprite {
+    font-size: 10rem;
+    position: relative;
+}
+
+.electric-aura {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 4px dashed #3b82f6;
+    animation: rotate 2s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dialogue-cloud {
+    background: white;
+    color: #0f172a;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    font-weight: 700;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.dialogue-cloud::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+.phase-card {
+    background: #0f172a;
+    border-radius: 32px;
+    padding: 40px;
+    border: 1px solid #1e293b;
+    height: 100%;
+}
+
+.phase-card h2 {
+    color: #3b82f6;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+.phase-desc {
+    color: #94a3b8;
+    margin-bottom: 40px;
+}
+
+.theory-challenge .question-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.option-btn {
+    background: #1e293b;
+    border: 2px solid #334155;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-btn:hover {
+    background: #334155;
+    border-color: #3b82f6;
+}
+
+.sim-challenge .task-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #f8fafc;
+}
+
+.circuit-designer {
+    background: #020617;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid #1e293b;
+}
+
+.source-info {
+    font-weight: 900;
+    color: #fbbf24;
+    margin-bottom: 20px;
+}
+
+.components-palette {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.comp-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.comp-btn.active {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    color: #3b82f6;
+    font-weight: 800;
+}
+
+.engage-btn {
+    width: 100%;
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.boss-feedback {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.boss-feedback.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+.boss-feedback.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+}
+
+.victory-overlay,
+.defeat-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.victory-card,
+.defeat-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    border: 2px solid #3b82f6;
+    text-align: center;
+    max-width: 600px;
+}
+
+.badge-logo {
+    font-size: 6rem;
+    margin-bottom: 20px;
+}
+
+.stars {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.reward-badge {
+    background: #020617;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+    border: 1px solid #1e293b;
+}
+
+.finish-btn,
+.retry-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.quit-btn {
+    background: none;
+    border: 1px solid #334155;
+    color: #64748b;
+    padding: 16px 40px;
+    margin-left: 20px;
+    border-radius: 12px;
+}

@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './DashboardSidebar.css';
 
 const DashboardSidebar = () => {
+    const navigate = useNavigate();
     const [isCollapsed, setIsCollapsed] = useState(false);
     const { user } = useAuth();
 
     const menuItems = [
+        { icon: '🗺️', label: 'Map', path: '/map' },
+        { icon: '🏆', label: 'Leaderboard', path: '/leaderboard' },
+        { icon: '🎮', label: 'Live Quiz Lobby', path: '/live-quiz/join' },
+        { icon: '👩‍🏫', label: 'Teacher Mode', path: '/teacher/dashboard' },
         { icon: 'ℹ️', label: 'About Science World' },
         { icon: '👨‍👩‍👧', label: 'Parents & teachers' },
-        { icon: '🤝', label: 'Partners' },
-        { icon: '👥', label: 'About us' },
-        { icon: '❤️', label: 'Donate' },
-        { icon: '📧', label: 'Contact' },
-        { icon: '💬', label: 'Share your feedback' },
     ];
 
     const utilityItems = [
@@ -51,7 +52,12 @@ const DashboardSidebar = () => {
             <div className="sidebar-content">
                 <nav className="main-nav">
                     {menuItems.map((item, idx) => (
-                        <div key={idx} className="nav-item">
+                        <div
+                            key={idx}
+                            className="nav-item"
+                            onClick={() => item.path && navigate(item.path)}
+                            style={{ cursor: item.path ? 'pointer' : 'default' }}
+                        >
                             <span className="nav-icon">{item.icon}</span>
                             {!isCollapsed && <span className="nav-label">{item.label}</span>}
                         </div>

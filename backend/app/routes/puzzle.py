@@ -1,16 +1,17 @@
 from flask import Blueprint, jsonify, request
 from app.models.extras import Puzzle
+from app.models.game_level import GameLevel
 
 bp = Blueprint('puzzle', __name__, url_prefix='/puzzle')
 
-@bp.route('/<int:topic_id>', methods=['GET'])
-def get_puzzles(topic_id):
-    puzzles = Puzzle.query.filter_by(topic_id=topic_id).all()
+@bp.route('/<int:level_id>', methods=['GET'])
+def get_puzzles(level_id):
+    puzzles = Puzzle.query.filter_by(game_level_id=level_id).all()
     result = [{
         "id": p.id,
-        "question": p.question,
-        "puzzle_type": p.puzzle_type,
-        "image_url": p.image_url
+        "question": p.puzzle_data.get('question'),
+        "puzzle_type": p.puzzle_data.get('puzzle_type'),
+        "image_url": p.puzzle_data.get('image_url')
     } for p in puzzles]
     return jsonify(result), 200
 
@@ -24,7 +25,7 @@ def submit_puzzle():
     if not puzzle:
         return jsonify({"message": "Puzzle not found"}), 404
         
-    is_correct = (answer.lower().strip() == puzzle.correct_answer.lower().strip())
+    is_correct = (str(answer).lower().strip() == str(puzzle.correct_answer).lower().strip())
     
     return jsonify({
         "correct": is_correct,

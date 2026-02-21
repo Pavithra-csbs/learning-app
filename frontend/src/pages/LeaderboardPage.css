@@ -1,0 +1,230 @@
+.leaderboard-full-container {
+    display: flex;
+    min-height: 100vh;
+    background: #0d1117;
+    color: white;
+}
+
+.leaderboard-content {
+    flex: 1;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.leaderboard-header h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.leaderboard-header p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+.leaderboard-filters {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    font-weight: 600;
+}
+
+.filter-group select {
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.reset-filter {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-filter:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+}
+
+.leaderboard-list-container {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 120px 120px;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 700;
+    color: #a0aec0;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 120px 120px;
+    padding: 15px 30px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.leaderboard-row:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: scale(1.01);
+}
+
+.rank-cell {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.rank-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.rank-gold .rank-num {
+    background: linear-gradient(135deg, #ffd700, #b8860b);
+    color: #000;
+}
+
+.rank-silver .rank-num {
+    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    color: #000;
+}
+
+.rank-bronze .rank-num {
+    background: linear-gradient(135deg, #cd7f32, #8b4513);
+    color: #000;
+}
+
+.student-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.student-avatar-wrap {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.student-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.total-cell {
+    font-weight: 800;
+    color: #60efff;
+    font-size: 1.2rem;
+}
+
+.leaderboard-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    gap: 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid #ffd700;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.no-data-leaderboard {
+    text-align: center;
+    padding: 60px;
+    color: #64748b;
+    font-style: italic;
+}
+
+.user-static-rank {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(to right, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+    border-radius: 16px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    text-align: center;
+    color: #a5b4fc;
+}
+
+.rank-gold {
+    border-left: 5px solid #ffd700;
+}
+
+.rank-silver {
+    border-left: 5px solid #e2e8f0;
+}
+
+.rank-bronze {
+    border-left: 5px solid #cd7f32;
+}

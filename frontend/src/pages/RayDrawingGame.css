@@ -1,0 +1,259 @@
+.ray-game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    z-index: 1000;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #f72585;
+    border-color: #f72585;
+    transform: translateX(-5px);
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.score-badge,
+.level-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-badge {
+    color: #4cc9f0;
+}
+
+.level-badge {
+    color: #f72585;
+}
+
+.game-arena {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.game-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+.game-card h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #f72585, #4cc9f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.game-card p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.start-btn,
+.finish-btn {
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.start-btn {
+    background: #f72585;
+    color: white;
+    box-shadow: 0 10px 30px rgba(247, 37, 133, 0.4);
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(247, 37, 133, 0.6);
+}
+
+.drawing-board {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.instruction-box {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+}
+
+.instruction-box h2 {
+    color: #4361ee;
+    margin-bottom: 5px;
+}
+
+.hint-text {
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    animation: slideUp 0.3s ease;
+}
+
+.hint-text.correct {
+    background: rgba(76, 201, 240, 0.1);
+    color: #4cc9f0;
+}
+
+.hint-text.wrong {
+    background: rgba(247, 37, 133, 0.1);
+    color: #f72585;
+}
+
+.optics-svg {
+    width: 100%;
+    height: 100%;
+    background: #0a0a12;
+    border-radius: 24px;
+    cursor: crosshair;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.incident-ray {
+    stroke: #f72585;
+    stroke-width: 6;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 8px #f72585);
+}
+
+.user-ray {
+    stroke: #4cc9f0;
+    stroke-width: 6;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 8px #4cc9f0);
+}
+
+.user-ray.correct {
+    stroke: #4cc9f0;
+    animation: raySuccess 0.5s ease forwards;
+}
+
+.user-ray.wrong {
+    stroke: #f72585;
+    opacity: 0.5;
+}
+
+.normal-line {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 2;
+}
+
+@keyframes raySuccess {
+    0% {
+        stroke-width: 6;
+        filter: drop-shadow(0 0 8px #4cc9f0);
+    }
+
+    50% {
+        stroke-width: 12;
+        filter: drop-shadow(0 0 20px #4cc9f0);
+    }
+
+    100% {
+        stroke-width: 6;
+        filter: drop-shadow(0 0 8px #4cc9f0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.success-card .stars {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.final-score {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #4cc9f0;
+    margin-bottom: 40px;
+}
+
+.finish-btn {
+    background: #4361ee;
+    color: white;
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.4);
+}

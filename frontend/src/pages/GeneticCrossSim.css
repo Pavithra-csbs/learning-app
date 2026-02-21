@@ -1,0 +1,218 @@
+.genetic-cross-container {
+    min-height: 100vh;
+    background: #0c0a09;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.gcs-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #8b5cf6;
+}
+
+.gcs-back {
+    background: none;
+    border: 1px solid #8b5cf6;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gcs-type {
+    font-weight: 800;
+    color: #a78bfa;
+    font-size: 1.2rem;
+}
+
+.gcs-game-area {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.gcs-info {
+    text-align: center;
+}
+
+.gcs-info p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.instruction {
+    font-style: italic;
+    color: #a78bfa !important;
+}
+
+.cross-visualization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.parents-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.parent-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4b5563;
+}
+
+.alleles {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #818cf8;
+}
+
+.cross-icon {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.offspring-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.down-arrows {
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+.offspring-node {
+    width: 220px;
+    height: 120px;
+    background: #1c1917;
+    border: 2px dashed #44403c;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.offspring-node.filled {
+    border-style: solid;
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.genotype-display {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #ec4899;
+}
+
+.click-reset {
+    font-size: 0.7rem;
+    color: #4b5563;
+    position: absolute;
+    bottom: 10px;
+}
+
+.allele-selector {
+    text-align: center;
+}
+
+.allele-selector h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+}
+
+.allele-chips {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.allele-chip {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.allele-chip.dom {
+    background: #3b82f6;
+}
+
+.allele-chip.rec {
+    background: #ef4444;
+}
+
+.allele-chip:active {
+    transform: scale(0.9);
+}
+
+.gcs-verify-btn {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: #fff;
+    border: none;
+    padding: 1.2rem 4rem;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+}
+
+.gcs-finish-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2e1065;
+}
+
+.gcs-result-card {
+    background: #1c1917;
+    padding: 4rem;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid #8b5cf6;
+    max-width: 500px;
+    width: 90%;
+}

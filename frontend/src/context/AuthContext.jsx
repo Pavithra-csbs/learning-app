@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
 
     // Set default base URL for axios
-    axios.defaults.baseURL = 'http://localhost:5000';
+    axios.defaults.baseURL = 'http://localhost:5020';
 
     useEffect(() => {
         // Add a request interceptor to attach the JWT token
@@ -32,6 +32,23 @@ export const AuthProvider = ({ children }) => {
         );
 
         return () => axios.interceptors.request.eject(interceptor);
+    }, []);
+
+    useEffect(() => {
+        // Add a response interceptor to handle 401s globally
+        const interceptor = axios.interceptors.response.use(
+            (response) => response,
+            (error) => {
+                if (error.response?.status === 401) {
+                    console.error("Token expired or unauthorized. Logging out.");
+                    logout();
+                    window.location.href = '/'; // Redirect to login
+                }
+                return Promise.reject(error);
+            }
+        );
+
+        return () => axios.interceptors.response.eject(interceptor);
     }, []);
 
     useEffect(() => {

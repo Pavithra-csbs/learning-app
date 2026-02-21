@@ -9,8 +9,9 @@ def submit_feedback():
     data = request.get_json()
     message = data.get('message')
     rating = data.get('rating')
+    student_id = data.get('student_id')
     
-    fb = Feedback(message=message, rating=rating)
+    fb = Feedback(message=message, rating=rating, student_id=student_id)
     db.session.add(fb)
     db.session.commit()
     

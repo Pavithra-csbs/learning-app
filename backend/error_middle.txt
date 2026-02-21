@@ -1,0 +1,100 @@
+﻿bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+sqlalchemy\engine\def
+ault.py", line 951, 
+in do_execute
+    cursor.execute(st
+atement, parameters)
+psycopg2.errors.Depen
+dentObjectsStillExist
+: cannot drop table l
+angchain_pg_collectio
+n because other 
+objects depend on it
+DETAIL:  constraint l
+angchain_pg_embedding
+_collection_id_fkey 
+on table langchain_pg
+_embedding depends 
+on table langchain_pg
+_collection
+HINT:  Use DROP ... 
+CASCADE to drop the 
+dependent objects 
+too.
+
+
+The above exception 
+was the direct cause 
+of the following 
+exception:
+
+Traceback (most 
+recent call last):
+  File "<frozen 
+runpy>", line 198, 
+in 
+_run_module_as_main
+  File "<frozen 
+runpy>", line 88, in 
+_run_code
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q
+bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+flask\__main__.py", 
+line 3, in <module>
+    main()
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q
+bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+flask\cli.py", line 
+1129, in main
+    cli.main()
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q
+bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+click\core.py", line 
+1078, in main
+    rv = 
+self.invoke(ctx)
+         
+^^^^^^^^^^^^^^^^
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q
+bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+click\core.py", line 
+1688, in invoke
+    return _process_r
+esult(sub_ctx.command
+.invoke(sub_ctx))
+                     
+      ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q
+bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+click\core.py", line 
+1688, in invoke
+    return _process_r
+esult(sub_ctx.command

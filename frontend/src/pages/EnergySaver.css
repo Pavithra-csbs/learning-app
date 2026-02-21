@@ -1,0 +1,155 @@
+.saving-game-container {
+    min-height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.game-arena {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.room-view {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.room-view h1 {
+    font-size: 2.5rem;
+    color: #fbbf24;
+    margin-bottom: 40px;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.item-card {
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 32px;
+    border: 1px solid #1e293b;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-card.fixed {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.item-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.item-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:disabled {
+    background: #10b981;
+    cursor: default;
+}
+
+.action-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.savings-label {
+    margin-top: 15px;
+    font-weight: 900;
+    color: #3b82f6;
+    font-size: 0.9rem;
+}
+
+.fixed .savings-label {
+    color: #10b981;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+    max-width: 600px;
+}
+
+.stars {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #334155;
+}
+
+.stars span.gold {
+    color: #fbbf24;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.tips {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    margin: 30px 0;
+}
+
+.tips h3 {
+    color: #3b82f6;
+    margin-top: 0;
+}
+
+.tips ul {
+    color: #94a3b8;
+}
+
+.next-level-btn {
+    background: #3b82f6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}

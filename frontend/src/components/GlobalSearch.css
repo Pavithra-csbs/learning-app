@@ -1,0 +1,96 @@
+.global-search-container {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 600px;
+}
+
+.search-bar-inner {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(76, 201, 240, 0.3);
+    border-radius: 3rem;
+    display: flex;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(76, 201, 240, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-bar-inner:focus-within {
+    border-color: #4cc9f0;
+    box-shadow: 0 0 30px rgba(76, 201, 240, 0.4);
+    transform: scale(1.02);
+}
+
+.search-bar-inner input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    flex: 1;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+.search-pulse-btn {
+    background: linear-gradient(45deg, #4cc9f0, #4361ee);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.3);
+    transition: all 0.2s;
+}
+
+.search-pulse-btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.global-suggestions-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.suggestion-row {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    color: #4cc9f0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.suggestion-row:hover {
+    background: rgba(76, 201, 240, 0.1);
+    padding-left: 2rem;
+}
+
+.dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .global-search-container {
+        width: 90%;
+        top: 1rem;
+    }
+}

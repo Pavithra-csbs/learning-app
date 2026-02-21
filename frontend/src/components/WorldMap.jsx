@@ -109,7 +109,7 @@ const WorldMap = ({ user }) => {
 
                 {/* Level Markers */}
                 {levels.map((level) => (
-                    <Link key={level.id} to={`/quiz/${level.id}`} className="level-btn-container" style={{ left: `${level.x}%`, top: `${level.y}%` }}>
+                    <Link key={level.id} to={`/learn/${level.id}`} className="level-btn-container" style={{ left: `${level.x}%`, top: `${level.y}%` }}>
                         <motion.div
                             className="level-marker"
                             whileHover={{ scale: 1.2 }}

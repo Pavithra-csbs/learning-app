@@ -1,0 +1,209 @@
+.solenoid-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.solenoid-header {
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.goal-meter {
+    font-weight: 900;
+    color: #fbbf24;
+    border: 1px solid #fbbf24;
+    padding: 10px 20px;
+    border-radius: 40px;
+}
+
+.solenoid-arena {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    padding: 40px;
+    gap: 40px;
+}
+
+.solenoid-visualizer {
+    background: #0f172a;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.core {
+    width: 60%;
+    height: 80px;
+    background: #1e293b;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    transition: background 0.5s;
+}
+
+.core.iron {
+    background: #475569;
+    box-shadow: 0 0 20px rgba(71, 85, 105, 0.5);
+}
+
+.turn {
+    width: 4px;
+    height: 120%;
+    background: #b45309;
+    align-self: center;
+    border-radius: 2px;
+}
+
+.field-lines-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.field-line {
+    height: 2px;
+    background: rgba(59, 130, 246, 0.3);
+    width: 100%;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.stat-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.intensity-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #3b82f6;
+    margin: 10px 0;
+}
+
+.intensity-bar {
+    height: 10px;
+    background: #020617;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.intensity-fill {
+    height: 100%;
+    background: #3b82f6;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.core-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.core-tabs button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.core-tabs button.active {
+    background: #3b82f6;
+    border-color: white;
+}
+
+.engage-btn {
+    margin-top: auto;
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 16px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.victory-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    border: 2px solid #3b82f6;
+    text-align: center;
+}
+
+.badge {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.stars {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.finish-btn {
+    margin-top: 30px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}

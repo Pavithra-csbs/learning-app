@@ -1,0 +1,208 @@
+.quiz-game-container {
+    min-height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.game-arena {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.selection-view h1 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #fbbf24;
+}
+
+.diff-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.diff-btn {
+    padding: 30px 60px;
+    border-radius: 24px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.diff-btn.easy {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.diff-btn.medium {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.diff-btn.hard {
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+}
+
+.diff-btn:hover {
+    transform: translateY(-10px);
+    filter: brightness(1.1);
+}
+
+.quiz-view {
+    width: 100%;
+    max-width: 800px;
+}
+
+.timer-bar {
+    height: 10px;
+    background: #0f172a;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.timer-fill {
+    height: 100%;
+    background: #3b82f6;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+.q-card {
+    background: #0f172a;
+    padding: 50px;
+    border-radius: 32px;
+    border: 1px solid #1e293b;
+    text-align: center;
+}
+
+.q-number {
+    color: #3b82f6;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.q-card h2 {
+    font-size: 2.2rem;
+    margin: 20px 0 40px 0;
+}
+
+.options {
+    display: grid;
+    gap: 20px;
+}
+
+.opt-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.opt-btn:hover {
+    border-color: #fbbf24;
+    background: #334155;
+    transform: translateX(10px);
+}
+
+.feedback-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-card {
+    background: #0f172a;
+    padding: 50px;
+    border-radius: 32px;
+    text-align: center;
+    border: 2px solid #334155;
+    width: 600px;
+}
+
+.feedback-card.success h1 {
+    color: #10b981;
+}
+
+.feedback-card.fail h1 {
+    color: #ef4444;
+}
+
+.feedback-card p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin: 20px 0 40px 0;
+}
+
+.next-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+}
+
+.stars {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #334155;
+}
+
+.stars span.gold {
+    color: #fbbf24;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.next-level-btn {
+    margin-top: 30px;
+    background: #3b82f6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}

@@ -1,0 +1,166 @@
+.effect-game-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.effect-arena {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 250px;
+    padding: 40px;
+    gap: 40px;
+}
+
+.visualization-bench {
+    background: #0f172a;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.coil-frame {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wire-loop {
+    width: 200px;
+    height: 40px;
+    background: #b45309;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(180, 83, 9, 0.4);
+}
+
+.field-line {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.control-panel {
+    background: #1e293b;
+    border-radius: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.meter {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.meter label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.display {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fbbf24;
+}
+
+.bar {
+    height: 12px;
+    background: #020617;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.fill {
+    height: 100%;
+    background: #3b82f6;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+input[type="range"] {
+    width: 300px;
+}
+
+.engage-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.status-text {
+    color: #fbbf24;
+    font-weight: 800;
+}
+
+.victory-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    border: 2px solid #3b82f6;
+    text-align: center;
+}
+
+.win-badge {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.stars {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #fbbf24;
+}
+
+.next-level-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}

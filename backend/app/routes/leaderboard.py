@@ -7,17 +7,21 @@ from sqlalchemy import func
 
 bp = Blueprint('leaderboard', __name__, url_prefix='/leaderboard')
 
-@bp.route('/<int:standard>', methods=['GET'])
-def get_leaderboard(standard):
+@bp.route('/<int:grade>', methods=['GET'])
+def get_leaderboard(grade):
     topic_id = request.args.get('topic_id', type=int)
     
     if topic_id:
         # Filter by specific topic - sum of best attempts per user for this topic
+        # Join with GameLevel to filter by topic
+        from app.models.game_level import GameLevel
         results = db.session.query(
             QuizAttempt.student_id, 
             func.max(QuizAttempt.score).label('max_score'),
             func.max(QuizAttempt.stars_earned).label('max_stars')
-        ).filter_by(topic_id=topic_id).group_by(QuizAttempt.student_id).order_by(func.max(QuizAttempt.score).desc()).limit(10).all()
+        ).join(GameLevel, QuizAttempt.game_level_id == GameLevel.id)\
+         .filter(GameLevel.topic_id == topic_id)\
+         .group_by(QuizAttempt.student_id).order_by(func.max(QuizAttempt.score).desc()).limit(10).all()
         
         result = []
         for r in results:
@@ -27,12 +31,12 @@ def get_leaderboard(standard):
                     "name": user.name,
                     "score": r.max_score,
                     "stars": r.max_stars,
-                    "avatar": user.student_profile.avatar_id if user.student_profile else "fun-emoji"
+                    "avatar": user.student_profile.avatar if user.student_profile else "fun-emoji"
                 })
         return jsonify(result), 200
 
-    # Default: Standard-wide leaderboard
-    entries = Leaderboard.query.filter_by(standard=standard).order_by(Leaderboard.total_score.desc()).limit(10).all()
+    # Default: Grade-wide leaderboard
+    entries = Leaderboard.query.filter_by(grade=grade).order_by(Leaderboard.total_score.desc()).limit(10).all()
     
     result = []
     for e in entries:
@@ -42,7 +46,7 @@ def get_leaderboard(standard):
                 "name": user.name,
                 "score": e.total_score,
                 "stars": e.total_stars,
-                "avatar": user.student_profile.avatar_id if user.student_profile else "fun-emoji"
+                "avatar": user.student_profile.avatar if user.student_profile else "fun-emoji"
             })
     
     return jsonify(result), 200

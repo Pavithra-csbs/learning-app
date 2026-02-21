@@ -28,8 +28,12 @@ class OTPService:
     @staticmethod
     def verify_otp(email, otp_input):
         record = EmailOTP.query.filter_by(email=email).first()
+        print(f"DEBUG: Verifying OTP for {email}. Input: '{otp_input}'")
         if not record:
+            print(f"DEBUG: No OTP record found for {email}")
             return False, "OTP not sent"
+        
+        print(f"DEBUG: Record found. Stored OTP: '{record.otp}', Expires: {record.expires_at}")
         
         if datetime.utcnow() > record.expires_at:
             return False, "OTP expired"

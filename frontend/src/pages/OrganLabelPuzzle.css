@@ -1,0 +1,213 @@
+.olp-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0c1a0e, #1a2e1c);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.olp-header {
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.olp-header h1 {
+    font-size: 1.4rem;
+}
+
+.olp-stats {
+    font-weight: 700;
+    color: #4ade80;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.olp-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.instruction {
+    font-size: 1rem;
+    color: #86efac;
+    text-align: center;
+}
+
+.olp-main {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
+}
+
+.body-diagram {
+    flex: 1;
+    min-width: 260px;
+    max-width: 340px;
+}
+
+.body-silhouette {
+    position: relative;
+    min-height: 420px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-outline {
+    font-size: 18rem;
+    opacity: 0.12;
+    user-select: none;
+    line-height: 1;
+}
+
+.organ-slot {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border: 2px solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+    transform: translate(-50%, -50%);
+}
+
+.organ-slot.placed {
+    opacity: 1;
+}
+
+.organ-slot.targeted {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.slot-label {
+    font-weight: 900;
+}
+
+.organ-pool {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 200px;
+}
+
+.organ-pool h3 {
+    color: #4ade80;
+    margin-bottom: 0.25rem;
+}
+
+.pool-organ {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    border: 2px solid;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.pool-organ.selected {
+    background: rgba(22, 163, 74, 0.2);
+    transform: scale(1.05);
+}
+
+.fact-popup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(22, 163, 74, 0.2);
+    border: 1px solid #16a34a;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    max-width: 680px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.fact-popup button {
+    background: none;
+    border: none;
+    color: #4ade80;
+    cursor: pointer;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.olp-container.done {
+    align-items: center;
+    justify-content: center;
+}
+
+.result-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+}
+
+.result-box h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.final-score {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4ade80;
+    margin: 1rem 0;
+}
+
+.motivation {
+    font-size: 1.1rem;
+    color: #86efac;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #16a34a, #4ade80);
+    color: #052e16;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}

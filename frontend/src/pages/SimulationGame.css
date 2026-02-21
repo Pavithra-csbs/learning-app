@@ -1,0 +1,1129 @@
+.sim-container {
+    min-height: 100vh;
+    background: #0f172a;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Fredoka', sans-serif;
+    overflow: hidden;
+}
+
+.sim-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.sim-workspace {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    overflow: visible;
+}
+
+.sim-floor {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Shadow Sim Styles */
+.sim-torch {
+    position: absolute;
+    bottom: 60px;
+    font-size: 2.5rem;
+    cursor: grab;
+    z-index: 10;
+}
+
+.beam {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 600px;
+    height: 100px;
+    background: radial-gradient(ellipse at left, rgba(251, 191, 36, 0.3), transparent 70%);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.sim-object {
+    position: absolute;
+    bottom: 60px;
+    font-size: 3rem;
+    z-index: 5;
+}
+
+.sim-screen {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    width: 10px;
+    background: #334155;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projected-shadow {
+    background: rgba(0, 0, 0, 0.8);
+    filter: blur(4px);
+    width: 50px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.sim-ui {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-weight: bold;
+    color: #4cc9f0;
+}
+
+/* Ruler Sim Styles */
+.ruler-tool {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    right: 40px;
+    height: 40px;
+    background: #fbbf24;
+    border-radius: 5px;
+    border: 2px solid #b45309;
+}
+
+.sim-draggable-obj {
+    position: absolute;
+    bottom: 90px;
+    font-size: 2.5rem;
+    cursor: grab;
+}
+
+.target-marker {
+    position: absolute;
+    top: 20px;
+    color: #f72585;
+    font-weight: 900;
+}
+
+/* Shared UI */
+.sim-hint {
+    margin-top: 2rem;
+    background: rgba(251, 191, 36, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: #fbbf24;
+}
+
+.sim-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.sim-card {
+    background: #1e293b;
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.sim-btn {
+    background: #4cc9f0;
+    color: #0f172a;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* Eye Doctor Sim Styles */
+.eye-doctor-sim {
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-view {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    min-height: 0;
+    /* Allow shrinking */
+    padding: 20px;
+}
+
+.patient-vision {
+    flex: 1;
+    background: #1e293b;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #334155;
+}
+
+.vision-scene {
+    font-size: 8rem;
+    text-align: center;
+    line-height: 250px;
+}
+
+.vision-label {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
+.ray-diagram {
+    flex: 1;
+    background: #0f172a;
+    border-radius: 1rem;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-ball {
+    width: 200px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.retina-mark {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 4px;
+    background: #ef4444;
+}
+
+.lens-graphic {
+    width: 10px;
+    height: 80px;
+    background: #93c5fd;
+    position: absolute;
+    left: 30px;
+    opacity: 0.8;
+}
+
+.lens-graphic[data-type="convex"] {
+    border-radius: 50%;
+}
+
+.lens-graphic[data-type="concave"] {
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 50% 50%, 100% 100%, 0 100%, 30% 50%);
+}
+
+.rays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.defect-label {
+    margin-top: 1rem;
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.doctor-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.lens-options {
+    display: flex;
+    gap: 10px;
+}
+
+.lens-options button {
+    background: #334155;
+    border: 2px solid #475569;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lens-options button.active {
+    background: #3b82f6;
+    border-color: #60a5fa;
+    transform: scale(1.05);
+}
+
+.check-btn {
+    background: #22c55e !important;
+    color: white !important;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+/* Circuit Puzzle Sim Styles */
+.circuit-puzzle-sim {
+    display: flex;
+    flex-direction: column;
+    background: #0f172a;
+}
+
+.circuit-header {
+    text-align: center;
+    padding: 10px;
+    background: #1e293b;
+    border-bottom: 2px solid #334155;
+}
+
+.circuit-board {
+    flex: 1;
+    position: relative;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.component-fixed {
+    font-size: 3rem;
+    z-index: 10;
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 50%;
+    border: 3px solid #fbbf24;
+}
+
+.wires {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.circuit-slots {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #475569;
+}
+
+.component-placed {
+    background: #3b82f6;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.component-placed span {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.toolbox {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.toolbox button {
+    background: #334155;
+    border: 1px solid #475569;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toolbox button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.next-level-btn {
+    background: #f472b6 !important;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bulb-glow {
+    font-size: 4rem;
+    transition: all 0.3s ease;
+}
+
+/* Magnetic Field Sim Styles */
+.magnet-sim {
+    background: #e5e7eb;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+}
+
+.magnet {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+    z-index: 20;
+}
+
+.magnet:active {
+    cursor: grabbing;
+}
+
+.compass {
+    z-index: 30;
+    transition: transform 0.05s linear;
+}
+
+/* =========================================
+   Magnetic Field Builder - Scenario UI
+   ========================================= */
+
+.mag-sim-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #f8fafc;
+    /* Light background */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #1e293b;
+    font-family: 'Fredoka', sans-serif;
+    position: relative;
+    height: 700px;
+    /* Fixed height for consistency */
+}
+
+/* Header */
+.mag-header {
+    background: #2563eb;
+    /* Blue header */
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mag-back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mag-title-icon {
+    font-size: 1.5rem;
+}
+
+.mag-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Progress Bar */
+.mag-progress-container {
+    padding: 1.5rem 2rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f8fafc;
+}
+
+.mag-progress-bar {
+    flex: 1;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.mag-progress-fill {
+    height: 100%;
+    background: #2563eb;
+    transition: width 0.5s ease-out;
+    border-radius: 9999px;
+}
+
+.mag-progress-container span {
+    font-weight: bold;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Main Card Visuals */
+.mag-card {
+    flex: 1;
+    margin: 1rem 2rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mag-visual-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.mag-scenario-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 2rem;
+    max-width: 80%;
+}
+
+.mag-scene {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* border: 1px dashed #ccc; */
+    /* Debug bounds */
+}
+
+/* Magnets */
+.mag-bar-magnet {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 40px;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mag-pole {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.mag-pole.N {
+    background: #ef4444;
+}
+
+.mag-pole.S {
+    background: #3b82f6;
+}
+
+.mag-pole-single {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mag-pole-single.red {
+    background: #ef4444;
+}
+
+.mag-pole-single.blue {
+    background: #3b82f6;
+}
+
+.mag-pole-single.red-blue {
+    background: linear-gradient(90deg, #ef4444 50%, #3b82f6 50%);
+    width: 140px;
+}
+
+.mag-arrow {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mag-arrow.left {
+    left: -40px;
+}
+
+.mag-arrow.right {
+    right: -40px;
+}
+
+.mag-label-text {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+/* Interaction Area */
+.mag-interaction-area {
+    background: #f8fafc;
+    padding: 0 2rem 2rem 2rem;
+    text-align: center;
+}
+
+.mag-interaction-area h3 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.mag-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mag-option-btn {
+    padding: 1rem;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.mag-option-btn:hover:not(:disabled) {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.mag-option-btn.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #2563eb;
+}
+
+.mag-option-btn.correct {
+    background: #22c55e;
+    color: white;
+    border-color: #16a34a;
+}
+
+.mag-option-btn.wrong {
+    background: #ef4444;
+    color: white;
+    border-color: #dc2626;
+    opacity: 0.6;
+}
+
+.mag-hint {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #f1f5f9;
+    border-radius: 99px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Feedback Modal */
+.mag-feedback-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    backdrop-filter: blur(2px);
+}
+
+.mag-feedback-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.mag-stars {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.mag-feedback-card h2 {
+    color: #1e293b;
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.mag-feedback-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.mag-next-btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 99px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.mag-next-btn.success {
+    background: #3b82f6;
+    color: white;
+}
+
+.mag-next-btn.retry {
+    background: #64748b;
+    color: white;
+}
+
+.mag-next-btn:hover {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   Energy City Planner Styles
+   ========================================= */
+
+.energy-planner-wrapper {
+    width: 100%;
+    max-width: 900px;
+    height: 700px;
+    background: #0f172a;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: white;
+    gap: 1.5rem;
+}
+
+.energy-stats-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.stat-progress {
+    height: 10px;
+    background: #334155;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.stat-bar.power {
+    background: #4cc9f0;
+    box-shadow: 0 0 10px #4cc9f0;
+}
+
+.stat-bar.pollution {
+    background: #ef4444;
+}
+
+.energy-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.grid-row {
+    display: flex;
+    gap: 8px;
+}
+
+.grid-tile {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.grid-tile:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #4cc9f0;
+}
+
+.grid-tile.highlight {
+    background: rgba(76, 201, 240, 0.1);
+    border: 2px dashed #4cc9f0;
+}
+
+.grid-tile.has-plant {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.plant-placed {
+    font-size: 2rem;
+    position: relative;
+}
+
+.plant-name-hover {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.grid-tile:hover .plant-name-hover {
+    opacity: 1;
+}
+
+.plant-selector {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.plant-options {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.plant-btn {
+    flex: 0 0 140px;
+    background: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+}
+
+.plant-btn:hover {
+    border-color: #4cc9f0;
+    transform: translateY(-2px);
+}
+
+.plant-btn.active {
+    border-color: #4cc9f0;
+    background: rgba(76, 201, 240, 0.1);
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.2);
+}
+
+.p-icon {
+    font-size: 1.5rem;
+}
+
+.p-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.p-name {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.p-cost {
+    font-size: 0.7rem;
+    color: #4cc9f0;
+}
+
+.energy-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ef4444;
+    padding: 1rem 2rem;
+    border-radius: 99px;
+    font-weight: bold;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   Equation Battle Styles
+   ========================================= */
+
+.eq-battle-wrapper {
+    width: 100%;
+    max-width: 900px;
+    height: 700px;
+    background: radial-gradient(circle at top, #1e1b4b, #0f172a);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.battle-arena {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.monster-container {
+    text-align: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.monster-visual {
+    font-size: 6rem;
+    filter: drop-shadow(0 0 20px #f472b6);
+}
+
+.monster-hp-bar {
+    width: 200px;
+    height: 15px;
+    background: #334155;
+    border-radius: 99px;
+    border: 2px solid white;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+.hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ef4444, #f472b6);
+    transition: width 0.5s ease-out;
+}
+
+.hp-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #f472b6;
+}
+
+.equation-zone {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.eq-unbalanced {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #94a3b8;
+}
+
+.eq-balancing-area {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 2rem;
+}
+
+.side {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.item-block {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+}
+
+.item-block input {
+    width: 50px;
+    background: #0f172a;
+    border: 2px solid #4cc9f0;
+    color: white;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.battle-btn {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius: 99px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+    transition: all 0.2s;
+}
+
+.battle-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(239, 68, 68, 0.4);
+}
+
+.battle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.eq-feedback {
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.eq-feedback.success {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.eq-feedback.error {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.atom-counter {
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.count-col h4 {
+    margin-bottom: 0.5rem;
+    color: #4cc9f0;
+    font-size: 0.9rem;
+}
+
+.count-col div {
+    font-size: 1.1rem;
+    font-weight: bold;
+}

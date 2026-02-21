@@ -60,6 +60,19 @@ def create_app(config_class=Config):
     app.register_blueprint(ai_chat.bp)
     app.register_blueprint(feedback.bp)
     
+    from app.routes.profile import profile_bp
+    app.register_blueprint(profile_bp)
+
+    from app.routes.ai_learning import ai_bp
+    app.register_blueprint(ai_bp)
+
+    from app.routes.leaderboard_ext import leaderboard_ext_bp
+    app.register_blueprint(leaderboard_ext_bp)
+    
+    from app.routes.teacher_live import teacher_live_bp, student_live_bp
+    app.register_blueprint(teacher_live_bp)
+    app.register_blueprint(student_live_bp)
+
     from app.routes import quiz_generator
     app.register_blueprint(quiz_generator.quiz_generator_bp)
     

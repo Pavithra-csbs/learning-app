@@ -1,0 +1,162 @@
+.puzzle-game-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.game-arena {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.puzzle-view {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.puzzle-view h1 {
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+
+.hint {
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.assembly-board {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(15, 23, 42, 0.5);
+    padding: 40px;
+    border-radius: 32px;
+    border: 2px dashed #1e293b;
+    margin-bottom: 40px;
+}
+
+.slot {
+    width: 140px;
+    height: 100px;
+    background: #020617;
+    border: 2px solid #1e293b;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slot-label {
+    font-size: 0.6rem;
+    color: #334155;
+    position: absolute;
+    bottom: 5px;
+    font-weight: 900;
+}
+
+.piece {
+    min-width: 120px;
+    height: 80px;
+    background: #1e293b;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #334155;
+}
+
+.piece.placed {
+    background: #3b82f6;
+    border-color: #60a5fa;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.pieces-pool {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.pool-piece:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+}
+
+.check-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.check-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+}
+
+.stars {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #334155;
+}
+
+.stars span.gold {
+    color: #fbbf24;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.next-level-btn {
+    margin-top: 30px;
+    background: #3b82f6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}

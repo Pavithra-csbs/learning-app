@@ -1,0 +1,115 @@
+.sorting-game-container {
+    background: #0a0a20;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+}
+
+.sorting-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.items-pool {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 200px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    width: 80%;
+}
+
+.draggable-item {
+    background: #1a1a3a;
+    border: 1px solid rgba(76, 201, 240, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
+    z-index: 10;
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+}
+
+.draggable-item .icon {
+    font-size: 2rem;
+}
+
+.draggable-item .name {
+    font-weight: 600;
+}
+
+.bins-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.bin {
+    width: 250px;
+    height: 200px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.bin h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.bin-count {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.bin.acid {
+    background: rgba(255, 69, 58, 0.1);
+    border-color: #ff453a;
+}
+
+.bin.acid h3 {
+    color: #ff453a;
+}
+
+.bin.base {
+    background: rgba(67, 97, 238, 0.1);
+    border-color: #4361ee;
+}
+
+.bin.base h3 {
+    color: #4361ee;
+}
+
+.bin.neutral {
+    background: rgba(52, 199, 89, 0.1);
+    border-color: #34c759;
+}
+
+.bin.neutral h3 {
+    color: #34c759;
+}
+
+.bin:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+}

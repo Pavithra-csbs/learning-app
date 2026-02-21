@@ -1,0 +1,206 @@
+.symbol-game-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.game-arena {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.converter-view {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.word-equation-card {
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #1e293b;
+}
+
+.word-equation-card h2 {
+    font-size: 1rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.word-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+.display-area {
+    background: #020617;
+    border: 2px dashed #334155;
+    min-height: 100px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.placeholder {
+    color: #475569;
+    font-style: italic;
+}
+
+.built-eq {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.part {
+    background: #1e293b;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #3b82f6;
+    border: 1px solid #334155;
+    font-family: 'Space Mono', monospace;
+}
+
+.part.op {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+}
+
+.picker-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.opt-btn {
+    background: #0f172a;
+    color: #cbd5e1;
+    border: 1px solid #1e293b;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Space Mono', monospace;
+}
+
+.opt-btn:hover {
+    background: #1e293b;
+    border-color: #3b82f6;
+    color: white;
+}
+
+.op-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.clear-btn,
+.hint-btn {
+    background: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.submit-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.hint-box {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid #3b82f6;
+    padding: 20px;
+    border-radius: 16px;
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+}
+
+.stars {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #334155;
+}
+
+.stars span.gold {
+    color: #fbbf24;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.next-level-btn {
+    margin-top: 30px;
+    background: #3b82f6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}

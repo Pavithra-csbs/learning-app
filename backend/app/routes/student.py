@@ -19,7 +19,7 @@ def get_subjects(standard_id):
 def get_topics(subject_id):
     topics = Topic.query.filter_by(subject_id=subject_id).all()
     result = [
-        {"id": t.id, "name": t.name, "description": t.description} 
+        {"id": t.id, "name": t.topic_name, "description": t.description, "level": t.level_number} 
         for t in topics
     ]
     return jsonify(result), 200
@@ -33,11 +33,12 @@ def get_topic_content(topic_id):
         return jsonify({"message": "Content not found"}), 404
         
     return jsonify({
-        "topic_name": topic.name,
-        "theory": content.theory,
-        "image_url": content.image_url,
-        "diagram_url": content.diagram_url
+        "topic_name": topic.topic_name,
+        "theory": content.lesson_text,
+        "images": content.images,
+        "animations_url": content.animations_url
     }), 200
+
 @bp.route('/profile', methods=['GET', 'POST'])
 @jwt_required()
 def handle_profile():
@@ -49,13 +50,13 @@ def handle_profile():
         return jsonify({
             "name": user.name,
             "email": user.email,
-            "standard": profile.standard,
+            "standard": profile.grade,
             "bio": profile.bio,
-            "school_name": profile.school_name,
+            "school_name": profile.school,
             "country": profile.country,
             "state": profile.state,
-            "avatar_id": profile.avatar_id,
-            "total_stars": profile.total_stars
+            "avatar_id": profile.avatar,
+            "total_stars": profile.points
         }), 200
 
     if request.method == 'POST':
@@ -69,17 +70,17 @@ def handle_profile():
             
         # Update Profile fields
         if 'standard' in data:
-            profile.standard = data['standard']
+            profile.grade = data['standard']
         if 'bio' in data:
             profile.bio = data['bio']
         if 'school_name' in data:
-            profile.school_name = data['school_name']
+            profile.school = data['school_name']
         if 'country' in data:
             profile.country = data['country']
         if 'state' in data:
             profile.state = data['state']
         if 'avatar_id' in data:
-            profile.avatar_id = data['avatar_id']
+            profile.avatar = data['avatar_id']
             
         try:
             db.session.commit()

@@ -35,20 +35,22 @@ const QuizArena = () => {
     useEffect(() => {
         const fetchQuiz = async () => {
             try {
-                console.log("DEBUG: Fetching quiz for", topicId);
-                const selectedWorld = localStorage.getItem('selectedWorld') || 'science';
-                const subjectName = selectedWorld === 'math' ? 'Math' : 'Science';
-
-                const apiUrl = '/api/generate-quiz';
-                console.log("DEBUG: Request URL:", apiUrl);
-
-                const response = await axios.post(apiUrl, {
-                    subject: subjectName,
+                let apiUrl = '/api/generate-quiz';
+                let payload = {
+                    subject: localStorage.getItem('selectedWorld') === 'math' ? 'Math' : 'Science',
                     chapter: 'Chapter 1',
                     topic: `Topic ${topicId}`,
-                    level: parseInt(topicId)
-                });
+                    level: parseInt(topicId) || 1
+                };
 
+                if (topicId === 'ai-mastery') {
+                    apiUrl = 'http://127.0.0.1:5000/api/ai/generate_quiz';
+                    payload = { student_id: user?.id };
+                }
+
+                console.log("DEBUG: Request URL:", apiUrl, "Payload:", payload);
+
+                const response = await axios.post(apiUrl, payload);
                 console.log("DEBUG: Server Response:", response.data);
 
                 if (response.data.questions) {
@@ -62,10 +64,7 @@ const QuizArena = () => {
                 }
             } catch (error) {
                 console.error("DEBUG: Quiz Fetch FAILED:", error);
-                const status = error.response?.status;
-                const msg = error.response?.data?.error || error.message;
-                toast.error(`Sync Failed (${status}): ${msg}. Using Backup Data! 🤖`);
-                // Fallback
+                toast.error(`Sync Failed. Using Backup Data! 🤖`);
                 setQuestions([
                     { id: 1, question: "What is 5 + 3?", options: ["53", "8", "9", "7"], correct: "8" },
                 ]);
@@ -75,7 +74,7 @@ const QuizArena = () => {
         };
 
         if (token) fetchQuiz();
-    }, [token, topicId]);
+    }, [token, topicId, user?.id]);
 
     const handleAnswer = (option) => {
         if (selectedOption) return; // Prevent double clicks
@@ -123,11 +122,26 @@ const QuizArena = () => {
 
     const finishQuiz = async (finalScore) => {
         try {
+            // Update legacy quiz progress
             const res = await axios.post('/quiz/submit', {
                 topic_id: topicId,
                 score: finalScore
             });
             setResultData(res.data);
+
+            // Update Extended Leaderboard (New System)
+            const world = localStorage.getItem('selectedWorld') || 'science';
+            const subject = world.charAt(0).toUpperCase() + world.slice(1);
+
+            await axios.post('/api/leaderboard/update', {
+                student_id: user?.id,
+                class: '10', // Assuming class 10 for now as per biology portals
+                subject: subject,
+                chapter: `Topic ${topicId}`,
+                quiz_score: finalScore,
+                stars_earned: res.data.stars || 0
+            });
+
             if (res.data.stars === 3) {
                 // Big Confetti
                 var duration = 3 * 1000;

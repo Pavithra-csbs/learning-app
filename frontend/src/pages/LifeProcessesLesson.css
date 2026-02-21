@@ -1,0 +1,414 @@
+.lp-lesson-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #052e16, #0f172a);
+    color: #fff;
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.lp-header {
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.lp-header h1 {
+    font-size: 1.5rem;
+    flex: 1;
+}
+
+.lp-back {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.lp-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.lp-progress-track {
+    width: 160px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lp-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #16a34a, #4ade80);
+    border-radius: 4px;
+    transition: width 0.5s;
+}
+
+.lp-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.lp-nav {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.lp-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.lp-dot.visited {
+    border-color: #16a34a;
+    color: #4ade80;
+}
+
+.lp-dot.active {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.lp-section-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 880px;
+    width: 100%;
+}
+
+.lp-section-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #86efac;
+}
+
+.lp-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+
+.lp-key-fact {
+    background: rgba(22, 163, 74, 0.15);
+    border-left: 4px solid #16a34a;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: #bbf7d0;
+    margin-top: 1rem;
+}
+
+.lp-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.lp-btn-prev,
+.lp-btn-next {
+    padding: 0.85rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.lp-btn-prev {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.lp-btn-prev:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.lp-btn-next {
+    background: linear-gradient(135deg, #16a34a, #4ade80);
+    color: #052e16;
+    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4);
+}
+
+.lp-btn-next:hover {
+    transform: scale(1.05);
+}
+
+.lp-visual {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Section Visuals */
+.lp-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.lp-process-card {
+    background: rgba(22, 163, 74, 0.1);
+    border: 1px solid rgba(22, 163, 74, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.lp-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.lp-label {
+    font-weight: 700;
+    color: #4ade80;
+    margin-bottom: 0.25rem;
+}
+
+.lp-desc {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.lp-visual-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lp-flow-title {
+    font-weight: 700;
+    color: #4ade80;
+    margin-bottom: 0.5rem;
+}
+
+.lp-flow-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.lp-flow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lp-flow-box {
+    background: rgba(22, 163, 74, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: pre-line;
+}
+
+.lp-flow-arrow {
+    font-size: 1.2rem;
+    color: #16a34a;
+    margin-left: 1rem;
+}
+
+.lp-plants-box {
+    margin-top: 1rem;
+    background: rgba(16, 185, 129, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #6ee7b7;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.lp-resp-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lp-resp-card {
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.lp-resp-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.lp-resp-card ul li::before {
+    content: '• ';
+}
+
+.lp-resp-card.aerobic {
+    background: rgba(22, 163, 74, 0.15);
+    border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.lp-resp-card.anaerobic {
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.lp-formula {
+    font-family: monospace;
+    font-size: 0.85rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+}
+
+.lp-oxygen-path {
+    background: rgba(99, 102, 241, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.lp-circ-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lp-heart-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.hd-chamber {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.hd-chamber small {
+    display: block;
+    font-size: 0.7rem;
+    color: #fca5a5;
+}
+
+.hd-arrow {
+    color: #ef4444;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.lp-blood-types {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bt-card {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.bt-card.arteries {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.bt-card.veins {
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.bt-card.capillaries {
+    background: rgba(168, 85, 247, 0.15);
+}
+
+.lp-excretion-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lp-nephron {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.nephron-step {
+    background: rgba(22, 163, 74, 0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.nephron-arrow {
+    font-size: 1.2rem;
+    color: #16a34a;
+    padding-left: 1rem;
+}
+
+.lp-other-excretion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.oe-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.lp-plants-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pv-item {
+    background: rgba(22, 163, 74, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border-left: 3px solid #16a34a;
+}
+
+.pv-fact {
+    background: rgba(16, 185, 129, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #6ee7b7;
+    margin-top: 0.5rem;
+}

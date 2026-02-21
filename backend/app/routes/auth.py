@@ -8,55 +8,62 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/send-otp', methods=['POST'])
 def send_otp():
-    data = request.get_json()
-    email = data.get('email')
-    
-    if not email:
-        return jsonify({"message": "Email is required"}), 400
-        
-    otp = OTPService.create_otp(email)
-    
-    # In a real app, send email here. For dev, we return it.
-    print(f"DEBUG: OTP for {email} is {otp}")
-    return jsonify({"message": "OTP sent successfully", "debug_otp": otp}), 200
+    # Deprecated: OTP no longer required.
+    return jsonify({"message": "OTP verification is disabled. Please proceed to login directly."}), 200
 
 @bp.route('/verify-otp', methods=['POST'])
 def verify_otp():
+    print("DEBUG: Received login request (previously verify-otp)")
     data = request.get_json()
+    print(f"DEBUG: Data: {data}")
     email = data.get('email')
-    otp_input = data.get('otp')
-    name = data.get('name') # Optional if logging in
-    standard = data.get('standard') # Optional if logging in
+    name = data.get('name') 
+    standard = data.get('standard')
     
-    is_valid, msg = OTPService.verify_otp(email, otp_input)
-    
-    if not is_valid:
-        return jsonify({"message": msg}), 400
-        
-    # Check if user exists
-    user = User.query.filter_by(email=email).first()
-    
-    if not user:
-        # Register new student
-        if not name or not standard:
-            return jsonify({"message": "Name and Standard required for new registration"}), 400
+    import traceback
+    try:
+        if not email:
+            return jsonify({"message": "Email is required"}), 400
             
-        user = User(name=name, email=email, role='student', is_verified=True)
-        db.session.add(user)
-        db.session.commit()
+        # Bypass OTP check completely
+        print(f"DEBUG: Bypassing OTP check for {email}")
         
-        profile = StudentProfile(user_id=user.id, standard=standard)
-        db.session.add(profile)
-        db.session.commit()
-    
-    access_token = create_access_token(identity=str(user.id))
-    return jsonify({
-        "message": "Login successful",
-        "token": access_token,
-        "user": {
-            "id": user.id,
-            "name": user.name,
-            "role": user.role,
-            "standard": user.student_profile.standard if user.student_profile else None
-        }
-    }), 200
+        # Check if user exists
+        query = User.query.filter_by(email=email)
+        print(f"DEBUG: SQL query generated: {query}")
+        user = query.first()
+        print(f"DEBUG: User query result: {user}")
+        
+        if not user:
+            # Register new student
+            print(f"DEBUG: Registering new user: {email}")
+            if not name or not standard:
+                return jsonify({"message": "Name and Standard (Grade) required for new registration"}), 400
+                
+            user = User(name=name, email=email, role='student')
+            db.session.add(user)
+            db.session.commit()
+            print(f"DEBUG: Created User ID: {user.id}")
+            
+            profile = StudentProfile(student_id=user.id, grade=standard)
+            db.session.add(profile)
+            db.session.commit()
+            print(f"DEBUG: Created Profile")
+        
+        print(f"DEBUG: Creating access token for user ID: {user.id}")
+        access_token = create_access_token(identity=str(user.id))
+        print(f"DEBUG: Token created successfully")
+        return jsonify({
+            "message": "Login successful",
+            "token": access_token,
+            "user": {
+                "id": user.id,
+                "name": user.name,
+                "role": user.role,
+                "standard": user.student_profile.grade if user.student_profile else None
+            }
+        }), 200
+    except Exception as e:
+        print(f"DEBUG: CRASH in verify_otp: {e}")
+        traceback.print_exc()
+        return jsonify({"message": str(e)}), 500

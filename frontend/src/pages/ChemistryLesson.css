@@ -1,0 +1,294 @@
+.chemistry-lesson-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 2px solid #1e293b;
+}
+
+.exit-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.progress-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.progress-bar-bg {
+    height: 10px;
+    background: #0f172a;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.lesson-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 900px;
+    background: #0f172a;
+    border-radius: 32px;
+    padding: 50px;
+    border: 1px solid #1e293b;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #3b82f6;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.page-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.equation-box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 5px solid #3b82f6;
+    margin: 30px 0;
+    font-family: 'Space Mono', monospace;
+}
+
+.equation-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.symbol-text {
+    font-size: 1.8rem;
+    color: #3b82f6;
+    font-weight: 900;
+}
+
+.points-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.points-list li {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    font-weight: 700;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.step-num {
+    background: #3b82f6;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Animations */
+.animation-container {
+    height: 200px;
+    background: #020617;
+    border-radius: 20px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #1e293b;
+}
+
+.flame {
+    font-size: 4rem;
+}
+
+.ribbon {
+    font-weight: 900;
+    color: #64748b;
+}
+
+.beaker-sim {
+    text-align: center;
+}
+
+.steam {
+    font-size: 2rem;
+    animation: steamUp 2s linear infinite;
+}
+
+@keyframes steamUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+.displacement-sim {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.test-tube {
+    width: 40px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution.blue {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: #3b82f6;
+}
+
+.solution.green {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: #22c55e;
+}
+
+.nail {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+.explanation-bubble {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    color: #fbbf24;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.lesson-footer {
+    height: 100px;
+    padding: 0 40px;
+    background: #020617;
+    border-top: 2px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 15px 40px;
+    border-radius: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn.prev {
+    background: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+}
+
+.nav-btn.next {
+    background: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.hint-pill {
+    background: #334155;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #94a3b8;
+}

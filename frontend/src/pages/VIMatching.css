@@ -1,0 +1,172 @@
+.vi-matching-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.vi-header {
+    height: 80px;
+    background: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 2px solid #1e293b;
+}
+
+.back-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.stat-pill {
+    background: #334155;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.resistance-box {
+    background: #eab308;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-weight: 900;
+    border: 2px solid #ca8a04;
+}
+
+.matching-arena {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.instruction-bar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.instruction-bar strong {
+    color: white;
+}
+
+.cards-layout {
+    display: flex;
+    gap: 100px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 200px;
+}
+
+.column h3 {
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.vi-card {
+    padding: 20px;
+    background: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 16px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.v-card.selected {
+    border-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    background: #273549;
+}
+
+.vi-card.matched {
+    opacity: 0.3;
+    cursor: default;
+    border-color: #10b981;
+}
+
+.explanation-popup {
+    position: fixed;
+    bottom: 40px;
+    padding: 20px 40px;
+    border-radius: 16px;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.explanation-popup.success {
+    background: #10b981;
+    color: white;
+}
+
+.explanation-popup.error {
+    background: #ef4444;
+    color: white;
+}
+
+.vi-success-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-modal {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #eab308;
+}
+
+.final-score {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #eab308;
+    margin: 30px 0;
+}
+
+.finish-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 900;
+    cursor: pointer;
+}

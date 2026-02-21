@@ -1,0 +1,50 @@
+﻿python : INFO  [alemb
+ic.runtime.migration]
+ Context impl 
+PostgresqlImpl.
+At line:1 char:26
++ $env:FLASK_APP='run
+.py'; python -m 
+flask db upgrade > 
+error.log 2>&1
++                    
+      ~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (INFO  [   
+ alembic....Postg    
+resqlImpl.:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+INFO  [alembic.runtim
+e.migration] Will 
+assume transactional 
+DDL.
+INFO  [alembic.runtim
+e.migration] Running 
+upgrade  -> 
+7c8cbdfebd36, Initial
+Traceback (most 
+recent call last):
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q
+bz5n2kfra8p0\LocalCac
+he\local-packages\Pyt
+hon311\site-packages\
+sqlalchemy\engine\bas
+e.py", line 1967, in 
+_exec_single_context
+    self.dialect.do_e
+xecute(
+  File "C:\Users\miru
+n\AppData\Local\Packa
+ges\PythonSoftwareFou
+ndation.Python.3.11_q

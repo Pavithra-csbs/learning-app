@@ -1,0 +1,93 @@
+.boss-lab-container {
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+}
+
+.boss-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.professor-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 40px;
+    border: 1px solid rgba(76, 201, 240, 0.2);
+    box-shadow: 0 0 50px rgba(76, 201, 240, 0.1);
+}
+
+.avatar {
+    font-size: 6rem;
+}
+
+.speech-bubble {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #4cc9f0;
+    font-weight: 600;
+}
+
+.lab-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.lab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.lab-btn:hover {
+    background: rgba(76, 201, 240, 0.2);
+    border-color: #4cc9f0;
+    transform: translateX(10px);
+}
+
+/* Victory Card */
+.victory-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 195, 0, 0.3);
+}
+
+.badge {
+    color: #ffc300;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.finish-btn {
+    margin-top: 3rem;
+    background: #ffc300;
+    color: #000;
+    border: none;
+    padding: 1.5rem 4rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 195, 0, 0.3);
+}

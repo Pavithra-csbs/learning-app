@@ -1,0 +1,151 @@
+.functional-quiz-container {
+    background: radial-gradient(circle at center, #312e81, #0f172a);
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-box {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-badge {
+    background: #fbbf24;
+    color: #000;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 800;
+}
+
+.quiz-arena {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 3rem;
+}
+
+.molecule-viewer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.molecule-3d-placeholder {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, #f472b6, #db2777);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(219, 39, 119, 0.4);
+}
+
+.visual-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    transform: rotate(-10deg);
+}
+
+.molecule-info h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #a5b4fc;
+}
+
+.molecule-info .formula {
+    font-size: 1.5rem;
+    color: #6366f1;
+    font-family: monospace;
+}
+
+.question-card {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.question-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.option-btn.correct {
+    background: #22c55e;
+    border-color: #15803d;
+    color: #fff;
+}
+
+.option-btn.wrong {
+    background: #ef4444;
+    border-color: #b91c1c;
+    color: #fff;
+}
+
+.result-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.result-screen h1 {
+    font-size: 3.5rem;
+    color: #fbbf24;
+}
+
+.final-score-text {
+    font-size: 2rem;
+}
+
+.finish-btn {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}

@@ -1,0 +1,202 @@
+.metals-theme {
+    background: radial-gradient(circle at 50% 50%, #1a1c2c, #000);
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+}
+
+.lesson-header {
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exit-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.lesson-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.page-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    padding: 4rem;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.page-card h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #f72585, #7209b7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #cbd5e0;
+    margin-bottom: 3rem;
+}
+
+/* Props Grid */
+.props-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.prop-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prop-item h3 {
+    color: #4cc9f0;
+    margin-bottom: 1rem;
+}
+
+/* Reaction Box */
+.reaction-box {
+    background: #000;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: left;
+    display: inline-block;
+    border-left: 5px solid #f72585;
+}
+
+.formula {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffd60a;
+}
+
+/* Series Visual */
+.series-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metal-node {
+    background: #2d3436;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #4cc9f0;
+    border: 1px solid rgba(76, 201, 240, 0.3);
+}
+
+.series-label {
+    font-weight: 700;
+    color: #a1a1aa;
+    letter-spacing: 2px;
+}
+
+/* Methods List */
+.method-card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Prevention Tags */
+.prevention-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tag {
+    background: #7209b7;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 20px rgba(114, 9, 183, 0.3);
+}
+
+/* Footer Navigation */
+.lesson-footer {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 1.2rem 3.5rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-btn.prev {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.nav-btn.next {
+    background: linear-gradient(45deg, #f72585, #7209b7);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(247, 37, 133, 0.4);
+}
+
+.nav-btn:hover:not(:disabled) {
+    transform: translateY(-5px);
+}
+
+.nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.dots {
+    display: flex;
+    gap: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dot.active {
+    background: #f72585;
+    box-shadow: 0 0 15px #f72585;
+    transform: scale(1.4);
+}

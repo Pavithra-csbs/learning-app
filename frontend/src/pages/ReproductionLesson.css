@@ -1,0 +1,289 @@
+.repro-lesson-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #064e3b, #0c4a6e);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.repro-header {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.repro-header h1 {
+    font-size: 1.5rem;
+    color: #6ee7b7;
+    text-shadow: 0 0 10px rgba(110, 231, 183, 0.3);
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    width: 150px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #10b981;
+    transition: width 0.3s;
+}
+
+.repro-lesson-body {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 2rem;
+}
+
+.section-selector {
+    display: flex;
+    gap: 1rem;
+}
+
+.section-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.section-dot.active {
+    background: #10b981;
+    border-color: #6ee7b7;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+    transform: scale(1.1);
+}
+
+.section-dot.visited {
+    border-color: #6ee7b7;
+}
+
+.lesson-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 30px;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.lesson-card h2 {
+    font-size: 2rem;
+    color: #6ee7b7;
+    margin-bottom: 1rem;
+}
+
+.lesson-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin-bottom: 2rem;
+}
+
+.lesson-visual {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.lesson-fact {
+    background: rgba(16, 185, 129, 0.15);
+    border-left: 5px solid #10b981;
+    padding: 1.5rem;
+    border-radius: 0 15px 15px 0;
+    color: #ecfdf5;
+    font-size: 1.1rem;
+}
+
+.lesson-fact strong {
+    color: #6ee7b7;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.lesson-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.nav-btn.prev {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.nav-btn.prev:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.nav-btn.next {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+.nav-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Visual Components */
+.rep-visual-dna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.dna-helix {
+    width: 40px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.dna-strand {
+    width: 8px;
+    height: 100%;
+    background: #10b981;
+    border-radius: 4px;
+    animation: dnaPulse 2s infinite ease-in-out;
+}
+
+@keyframes dnaPulse {
+
+    0%,
+    100% {
+        height: 100%;
+    }
+
+    50% {
+        height: 60%;
+    }
+}
+
+.rep-asexual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.as-type {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.rep-visual-flower {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.f-part {
+    padding: 1.25rem;
+    border-radius: 15px;
+    border: 2px solid;
+    font-weight: 700;
+    text-align: center;
+}
+
+.male {
+    border-color: #fcd34d;
+    background: rgba(252, 211, 77, 0.1);
+}
+
+.female {
+    border-color: #f472b6;
+    background: rgba(244, 114, 182, 0.1);
+}
+
+.rep-human-anatomy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.anatomy-item {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+}
+
+.calendar-circle {
+    width: 180px;
+    height: 180px;
+    border: 4px dashed #6ee7b7;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem;
+}

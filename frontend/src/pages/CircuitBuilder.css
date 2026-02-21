@@ -1,0 +1,389 @@
+.circuit-builder-v2 {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: #f8fafc;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.circuit-header {
+    height: 80px;
+    background: #0f172a;
+    border-bottom: 2px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-left h1 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #38bdf8;
+    font-weight: 900;
+}
+
+.back-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.circuit-stats-display {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.stat-pill {
+    background: #1e293b;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: 'Courier New', monospace;
+    color: #10b981;
+    font-weight: 900;
+    border: 1px solid #334155;
+}
+
+.energy-badge {
+    background: #eab308;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 900;
+}
+
+.lab-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 0;
+}
+
+.toolbox {
+    background: #0f172a;
+    border-right: 2px solid #1e293b;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.toolbox h3 {
+    font-size: 0.8rem;
+    color: #64748b;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    flex: 1;
+}
+
+.tool-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 15px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: grab;
+    transition: all 0.2s;
+}
+
+.tool-card:hover {
+    border-color: #38bdf8;
+    background: #273549;
+}
+
+.tool-icon {
+    font-size: 2rem;
+}
+
+.tool-name {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #94a3b8;
+}
+
+.help-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.reset-lab-btn {
+    font-size: 0.7rem;
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.workbench {
+    background: #020617;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.connections-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.flowing-wire {
+    stroke-dasharray: 10, 5;
+    animation: electronFlow 0.5s linear infinite;
+}
+
+@keyframes electronFlow {
+    to {
+        stroke-dashoffset: -15;
+    }
+}
+
+.component-node {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 20;
+}
+
+.component-body {
+    width: 80px;
+    height: 80px;
+    background: #1e293b;
+    border: 2px solid #475569;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.large-icon {
+    font-size: 2.5rem;
+}
+
+.name-tag {
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: #64748b;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.terminals {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    right: -10px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.terminal {
+    width: 20px;
+    height: 20px;
+    background: #475569;
+    border: 3px solid #020617;
+    border-radius: 50%;
+    cursor: crosshair;
+    pointer-events: auto;
+    transition: all 0.2s;
+}
+
+.terminal:hover,
+.terminal.active {
+    background: #38bdf8;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+.bulb-visual {
+    font-size: 3rem;
+    transition: all 0.3s;
+}
+
+.bulb-visual.on {
+    text-shadow: 0 0 20px #eab308, 0 0 40px #eab308;
+    filter: brightness(1.5);
+}
+
+.switch-visual {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lever {
+    width: 40px;
+    height: 8px;
+    background: #475569;
+    border-radius: 4px;
+    transform-origin: left;
+    transition: all 0.3s;
+}
+
+.lever.open {
+    transform: rotate(-45deg);
+    background: #ef4444;
+}
+
+.lever.closed {
+    transform: rotate(0deg);
+    background: #10b981;
+}
+
+.switch-visual span {
+    font-size: 0.5rem;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+.meter-visual {
+    background: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+}
+
+.meter-visual .value {
+    color: #10b981;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.meter-visual .unit {
+    color: #64748b;
+    font-size: 0.6rem;
+}
+
+.floating-controls {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 50;
+}
+
+.lab-hint {
+    background: rgba(15, 23, 42, 0.9);
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.simulate-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 16px 48px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    letter-spacing: 2px;
+}
+
+.success-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #10b981;
+    max-width: 600px;
+}
+
+.lab-report {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.report-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.next-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 900;
+    cursor: pointer;
+}

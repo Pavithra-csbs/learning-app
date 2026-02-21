@@ -1,0 +1,345 @@
+.periodic-lesson-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.lesson-header {
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.lesson-header h1 {
+    font-size: 1.5rem;
+    flex: 1;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.progress-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-bar-track {
+    width: 160px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #06b6d4);
+    border-radius: 4px;
+    transition: width 0.5s;
+}
+
+.lesson-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.section-nav {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.nav-dot.visited {
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.nav-dot.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.section-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 860px;
+    width: 100%;
+}
+
+.section-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #a5b4fc;
+}
+
+.section-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #e2e8f0;
+}
+
+.key-fact {
+    background: rgba(99, 102, 241, 0.15);
+    border-left: 4px solid #6366f1;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: #c7d2fe;
+    margin-top: 1rem;
+}
+
+.lesson-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-prev,
+.btn-next {
+    padding: 0.85rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-prev {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-next:hover {
+    transform: scale(1.05);
+}
+
+.btn-prev:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Visuals */
+.visual-box {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.timeline-item {
+    background: rgba(99, 102, 241, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.timeline-item.highlight {
+    background: rgba(6, 182, 212, 0.3);
+    font-weight: 700;
+    border: 1px solid #06b6d4;
+}
+
+.timeline-arrow {
+    font-size: 1.5rem;
+    color: #6366f1;
+}
+
+.periods-groups .pg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pg-label {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.pg-label.period {
+    background: rgba(99, 102, 241, 0.2);
+    border-left: 3px solid #6366f1;
+}
+
+.pg-label.group {
+    background: rgba(6, 182, 212, 0.2);
+    border-left: 3px solid #06b6d4;
+}
+
+.trends-box .trend-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.trend-label {
+    min-width: 140px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.trend-atoms {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.trend-atoms.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.trend-atom {
+    border-radius: 50%;
+    background: radial-gradient(circle, #6366f1, #312e81);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 22px;
+    min-height: 22px;
+    transition: all 0.3s;
+}
+
+.trend-arrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.trend-arrow.shrink {
+    color: #f97316;
+}
+
+.trend-arrow.grow {
+    color: #22c55e;
+}
+
+.valency-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.valency-table th {
+    background: rgba(99, 102, 241, 0.3);
+    padding: 0.5rem;
+}
+
+.valency-table td {
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.classification-box {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.class-card {
+    flex: 1;
+    min-width: 180px;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.class-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.class-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.class-card ul li::before {
+    content: '• ';
+    color: #6366f1;
+}
+
+.class-card.metal {
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.class-card.metalloid {
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.class-card.nonmetal {
+    background: rgba(6, 182, 212, 0.15);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.applications-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.app-item {
+    background: rgba(99, 102, 241, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}

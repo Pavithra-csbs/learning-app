@@ -1,0 +1,198 @@
+.resource-planner-container {
+    min-height: 100vh;
+    background: #0f172a;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.rp-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #10b981;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.rp-dashboard {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 800;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat.good {
+    color: #10b981;
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.stat.bad {
+    color: #f43f5e;
+    border-color: #f43f5e;
+    background: rgba(244, 63, 94, 0.05);
+}
+
+.rp-main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.planning-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.category-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #10b981;
+    letter-spacing: 2px;
+}
+
+.options-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.option-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.option-card:hover {
+    border-color: #10b981;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.option-card.selected {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.opt-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.opt-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.opt-cost {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.opt-impact {
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-top: 0.5rem;
+}
+
+.opt-impact.pos {
+    color: #10b981;
+}
+
+.opt-impact.neg {
+    color: #f43f5e;
+}
+
+.planner-summary {
+    margin-top: 1rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.city-stats {
+    display: flex;
+    gap: 3rem;
+    font-weight: 700;
+    color: #cbd5e1;
+}
+
+.finish-plan-btn {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.finish-plan-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.3);
+}
+
+.sp-finish-screen {
+    min-height: 100vh;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Reuse finish styles from previous levels */
+
+@media (max-width: 900px) {
+    .options-row {
+        grid-template-columns: 1fr;
+    }
+
+    .planner-summary {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .city-stats {
+        gap: 1rem;
+        flex-direction: column;
+    }
+}

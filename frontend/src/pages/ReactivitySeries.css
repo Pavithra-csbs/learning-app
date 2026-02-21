@@ -1,0 +1,89 @@
+.reactivity-game-container {
+    background: #1a1a2e;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+.puzzle-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #e94560;
+    font-weight: 600;
+}
+
+.metal-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.metal-card {
+    background: #16213e;
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+}
+
+.metal-card:active {
+    cursor: grabbing;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+.drag-handle {
+    color: #e94560;
+    font-size: 1.2rem;
+}
+
+.metal-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.check-btn {
+    background: #e94560;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+}
+
+.victory-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 800px;
+    border: 2px solid #e94560;
+}
+
+.victory-card p {
+    margin: 2rem 0;
+    color: #cbd5e0;
+    line-height: 1.6;
+}

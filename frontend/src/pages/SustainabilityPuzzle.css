@@ -1,0 +1,165 @@
+.sustainability-puzzle-container {
+    min-height: 100vh;
+    background: #0f172a;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-header {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.sp-header h1 {
+    font-size: 2.2rem;
+    color: #10b981;
+    margin: 1rem 0;
+}
+
+.sp-header p {
+    color: #94a3b8;
+}
+
+.sp-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.sp-arena {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.puzzle-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.puzzle-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    cursor: grab;
+    transition: 0.2s;
+}
+
+.puzzle-item:active {
+    cursor: grabbing;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.item-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: #a7f3d0;
+}
+
+.item-details p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.drag-handle {
+    color: #475569;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.check-btn {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.check-btn:hover {
+    background: #059669;
+    transform: translateY(-3px);
+}
+
+.hint-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.sp-finish-screen {
+    min-height: 100vh;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.sp-result-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid #10b981;
+}
+
+.stars-row {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.final-score {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #10b981;
+}
+
+.finish-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 15px;
+    font-weight: 800;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .sp-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .puzzle-item {
+        padding: 1rem;
+    }
+}

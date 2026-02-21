@@ -1,0 +1,287 @@
+.ehc-battle-container {
+    min-height: 100vh;
+    background: #0c0a09;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.battle-hud {
+    padding: 2rem 3rem;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ef4444;
+}
+
+.stat-bars {
+    flex: 1;
+    display: flex;
+    gap: 4rem;
+    max-width: 800px;
+}
+
+.hp-container {
+    flex: 1;
+}
+
+.hp-container label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.hp-bar {
+    height: 15px;
+    background: #1e1b4b;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hp-fill {
+    height: 100%;
+    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hp-fill.player {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    box-shadow: 0 0 15px #10b981;
+}
+
+.hp-fill.boss {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    box-shadow: 0 0 15px #ef4444;
+}
+
+.timer-ring {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.battle-arena {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.boss-sprite {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 20px #ef4444);
+    animation: boss-float 3s infinite ease-in-out;
+}
+
+@keyframes boss-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.boss-quiz-card {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.boss-quiz-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.boss-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.boss-opt-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boss-opt-btn:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    transform: translateY(-3px);
+}
+
+.boss-expl-view {
+    background: #0f172a;
+    padding: 3rem;
+    border-radius: 40px;
+    text-align: center;
+    width: 500px;
+    border: 3px solid #10b981;
+}
+
+.boss-expl-view.incorrect {
+    border-color: #ef4444;
+}
+
+.combat-label {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+
+.battle-next-btn {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    font-weight: 800;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.ehc-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #1e1b4b, #0c0a09);
+    padding: 2rem;
+}
+
+.ehc-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #10b981;
+    padding: 5rem 3rem;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.hero-avatar {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.ehc-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.ehc-card p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.start-btn,
+.finish-btn,
+.retry-btn {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+.won {
+    background: radial-gradient(circle, #064e3b, #0c0a09);
+}
+
+.won .ehc-card {
+    border-color: #facc15;
+}
+
+.medal-icon {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+
+.badge-unlocked {
+    color: #facc15;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: rgba(250, 204, 21, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.lost {
+    background: radial-gradient(circle, #450a0a, #0c0a09);
+}
+
+.lost .ehc-card {
+    border-color: #ef4444;
+}
+
+.lost-icon {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+
+.back-btn-lost {
+    background: transparent;
+    color: #94a3b8;
+    border: none;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .battle-hud {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .stat-bars {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .boss-options {
+        grid-template-columns: 1fr;
+    }
+}

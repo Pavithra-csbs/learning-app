@@ -1,0 +1,164 @@
+.ph-game-container {
+    background: #050510;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+}
+
+.game-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.game-arena {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.slider-view {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.substance-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.substance-card .icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.substance-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4cc9f0;
+}
+
+.substance-card p {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+}
+
+.interactive-scale {
+    margin: 4rem 0;
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #cbd5e0;
+}
+
+.ph-strip {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.ph-input {
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to right,
+            #ff0000 0%, #ff8000 25%, #ffff00 50%, #00ff00 60%, #00ffff 75%, #0000ff 100%);
+    appearance: none;
+    outline: none;
+}
+
+.ph-input::-webkit-slider-thumb {
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: 4px solid #4cc9f0;
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
+    transition: transform 0.2s;
+}
+
+.ph-input::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.current-ph-display {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.check-btn {
+    background: linear-gradient(45deg, #4cc9f0, #4361ee);
+    color: #fff;
+    border: none;
+    padding: 1.5rem 4rem;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.3);
+    transition: all 0.3s;
+}
+
+.check-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(67, 97, 238, 0.5);
+}
+
+/* Victory Card */
+.victory-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stars {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.gold {
+    color: #ffcc00;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+}
+
+.next-level-btn {
+    margin-top: 3rem;
+    background: #4cc9f0;
+    color: #000;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}

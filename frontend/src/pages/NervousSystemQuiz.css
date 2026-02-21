@@ -1,0 +1,227 @@
+.nsq-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.nsq-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.nsq-back {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #6366f1;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nsq-score {
+    font-weight: 800;
+    color: #fbbf24;
+    font-size: 1.2rem;
+}
+
+.nsq-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.nsq-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nsq-timer {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    color: #818cf8;
+    border: 2px solid #6366f1;
+}
+
+.nsq-timer.danger {
+    color: #f87171;
+    border-color: #ef4444;
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+.nsq-q-box h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    line-height: 1.4;
+}
+
+.nsq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.nsq-opt-btn {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+}
+
+.nsq-opt-btn:hover:not(:disabled) {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: #6366f1;
+    transform: translateY(-3px);
+}
+
+.nsq-opt-btn.correct {
+    background: #065f46;
+    border-color: #10b981;
+    color: #fff;
+}
+
+.nsq-opt-btn.wrong {
+    background: #7f1d1d;
+    border-color: #ef4444;
+    color: #fff;
+}
+
+.opt-letter {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.nsq-explanation {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid #6366f1;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.expl-text {
+    flex: 1;
+}
+
+.expl-text strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #818cf8;
+    font-size: 1.1rem;
+}
+
+.expl-text p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.nsq-next-btn {
+    padding: 1rem 2rem;
+    background: #6366f1;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: scale 0.2s;
+}
+
+.nsq-next-btn:hover {
+    transform: scale(1.05);
+}
+
+.nsq-container.done {
+    justify-content: center;
+    align-items: center;
+    background: #1e1b4b;
+}
+
+.nsq-result-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nsq-score {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fbbf24;
+    margin: 1rem 0;
+}
+
+.nsq-stars {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.nsq-msg {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.nsq-btn {
+    padding: 1rem 3rem;
+    background: #6366f1;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,149 @@
+.footprint-game-container {
+    min-height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.game-arena {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    overflow-y: auto;
+}
+
+.meter-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.meter-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: #94a3b8;
+}
+
+.meter-bg {
+    height: 20px;
+    background: #0f172a;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+}
+
+.meter-fill {
+    height: 100%;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.scenario-view {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.scenario-view h1 {
+    font-size: 2.5rem;
+    color: #fbbf24;
+    margin-bottom: 40px;
+}
+
+.options-list {
+    display: grid;
+    gap: 20px;
+}
+
+.choice-btn {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.choice-btn:hover {
+    transform: translateX(10px);
+    border-color: #3b82f6;
+    background: #1e293b;
+}
+
+.choice-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.choice-label {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.choice-carbon {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+    max-width: 600px;
+}
+
+.stars {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #334155;
+}
+
+.stars span.gold {
+    color: #fbbf24;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.impact-info {
+    color: #94a3b8;
+    margin: 20px 0 40px 0;
+    line-height: 1.6;
+}
+
+.next-level-btn {
+    background: #3b82f6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}

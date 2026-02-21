@@ -1,0 +1,68 @@
+.join-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4338ca;
+}
+
+.join-card {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.join-logo {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #1e1b4b;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: center;
+    border: 3px solid #e2e8f0;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    background: #1e1b4b;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #312e81;
+    transform: scale(1.02);
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.join-footer {
+    margin-top: 25px;
+    color: #64748b;
+}

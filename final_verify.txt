@@ -1,0 +1,2 @@
+Tables found: email_otp, users, alembic_version, standard, subject, feedback, topic, topic_content, student_profile, question, quiz_attempt, student_topic_progress, puzzle, live_quiz, learning_progress, leaderboard, academic_mission, academic_question
+FAIL: 'user' table MISSING!

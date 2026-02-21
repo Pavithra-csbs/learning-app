@@ -1,0 +1,110 @@
+.corrosion-game-container {
+    background: #0f172a;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+.defense-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.bridge-container {
+    position: relative;
+    font-size: 15rem;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rust-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: sepia(1) saturate(5) hue-rotate(-30deg) brightness(0.8);
+    pointer-events: none;
+}
+
+.status-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    color: #f87171;
+    letter-spacing: 2px;
+}
+
+.toolbox {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.toolbox h3 {
+    margin-bottom: 2rem;
+    color: #38bdf8;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.method-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.method-btn:hover:not(:disabled) {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
+
+.method-btn.checked {
+    background: #059669;
+    border-color: #10b981;
+    opacity: 0.8;
+}
+
+.method-btn .name {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.method-btn .desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.victory-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5rem;
+    border-radius: 40px;
+    border: 2px solid #10b981;
+}
+
+.victory-card p {
+    margin: 2rem 0;
+    color: #cbd5e0;
+    line-height: 1.6;
+    max-width: 600px;
+}

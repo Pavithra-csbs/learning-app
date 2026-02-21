@@ -1,0 +1,131 @@
+.organic-puzzle-container {
+    background: radial-gradient(circle at center, #1e1b4b, #000);
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.puzzle-arena {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.molecule-name {
+    font-size: 3rem;
+    color: #a78bfa;
+    margin: 0;
+}
+
+.blueprint-text {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+}
+
+.construction-zone {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.base-structure {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #38bdf8;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slot {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed #fbbf24;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+    transition: all 0.3s;
+}
+
+/* Positioning slots is tricky generically, we'll try a flexible approach using flex/grid or absolute offsets based on children */
+/* For now, let's use a simple layout logic in CSS isn't easy without known positions. 
+   We will center them around the base. */
+
+.construction-zone .slot:nth-child(2) {
+    transform: translate(0, -100px);
+}
+
+/* Top */
+.construction-zone .slot:nth-child(3) {
+    transform: translate(100px, 0);
+}
+
+/* Right */
+.construction-zone .slot:nth-child(4) {
+    transform: translate(0, 100px);
+}
+
+/* Bottom */
+.construction-zone .slot:nth-child(5) {
+    transform: translate(-100px, 0);
+}
+
+/* Left */
+
+.slot.filled {
+    border-style: solid;
+    background: #fbbf24;
+    color: #000;
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.parts-tray {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.puzzle-piece {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: grab;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.puzzle-piece:active {
+    cursor: grabbing;
+}

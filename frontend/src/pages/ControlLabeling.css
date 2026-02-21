@@ -1,0 +1,237 @@
+.cl-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1b4b, #111827);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.cl-header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #6366f1;
+}
+
+.cl-back {
+    background: none;
+    border: 1px solid #6366f1;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cl-score {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #818cf8;
+}
+
+.cl-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.cl-labels-bank {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cl-labels-bank h3 {
+    margin-bottom: 1rem;
+    color: #818cf8;
+    font-size: 1.1rem;
+}
+
+.cl-label-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cl-label-btn {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.cl-label-btn:hover:not(.placed) {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
+}
+
+.cl-label-btn.active {
+    background: #6366f1;
+    border-color: #818cf8;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.cl-label-btn.placed {
+    opacity: 0.4;
+    cursor: default;
+    background: #065f46;
+    border-color: #059669;
+}
+
+.cl-diagram-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-diagram-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.diagram-box {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    position: relative;
+}
+
+.diagram-box h4 {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #111827;
+    padding: 0 10px;
+    color: #818cf8;
+    font-size: 0.9rem;
+}
+
+.diagram-flow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #4b5563;
+}
+
+.drop-zone {
+    min-width: 120px;
+    min-height: 80px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.2s;
+    text-align: center;
+    padding: 10px;
+}
+
+.drop-zone:hover {
+    border-color: #818cf8;
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.drop-zone.filled {
+    border-style: solid;
+    border-color: #6366f1;
+    background: #312e81;
+    color: #fff;
+    border-width: 2px;
+}
+
+.cl-info-panel {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.cl-hint-box h4 {
+    color: #818cf8;
+    margin-bottom: 1rem;
+}
+
+.cl-hint-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+.cl-clue-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.cl-container.done {
+    justify-content: center;
+    align-items: center;
+}
+
+.cl-result-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.cl-stars {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.cl-final-score {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #818cf8;
+    margin: 1rem 0;
+}
+
+.cl-motto {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.cl-btn {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}

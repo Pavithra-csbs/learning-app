@@ -1,0 +1,107 @@
+.periodic-game-container {
+    background: #020617;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+.grid-instructions {
+    margin-bottom: 2rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.periodic-grid {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.grid-cell {
+    width: 100px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.grid-cell.filled {
+    border: none;
+    background: transparent;
+}
+
+.el-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.el-card.metal {
+    background: #1e3a8a;
+    border: 2px solid #3b82f6;
+}
+
+.el-card.non-metal {
+    background: #581c87;
+    border: 2px solid #a855f7;
+}
+
+.el-card .symbol {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.el-card .num {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    opacity: 0.6;
+}
+
+.placeholder {
+    opacity: 0.2;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.elements-pool {
+    display: flex;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.pool-el {
+    width: 60px;
+    height: 60px;
+    background: #334155;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: grab;
+}
+
+.pool-el:active {
+    cursor: grabbing;
+}
+
+.victory-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 30px;
+}

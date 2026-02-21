@@ -1,0 +1,183 @@
+.ec-container {
+    min-height: 100vh;
+    background: #020617;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.ec-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #8b5cf6;
+}
+
+.check-btn {
+    background: #8b5cf6;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ec-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: start;
+}
+
+.ec-grid-view {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.ec-row {
+    display: flex;
+    gap: 4px;
+}
+
+.ec-cell {
+    width: 45px;
+    height: 45px;
+    background: #1e293b;
+    border-radius: 8px;
+    position: relative;
+}
+
+.ec-cell.blocked {
+    background: transparent;
+}
+
+.ec-cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: #8b5cf6;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.ec-cell input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.ec-clues-view {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 2rem;
+}
+
+.ec-clues-view h3 {
+    font-size: 1.5rem;
+    color: #8b5cf6;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.clues-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.clue-section h4 {
+    font-size: 1rem;
+    color: #94a3b8;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.clue-section p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.8rem;
+    border-radius: 10px;
+}
+
+.ec-finish-screen {
+    min-height: 100vh;
+    background: #2e1065;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ec-result-card {
+    background: #0a0a0a;
+    padding: 4rem;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid #8b5cf6;
+    width: 450px;
+}
+
+.stars-row {
+    font-size: 3.5rem;
+    margin: 1.5rem 0;
+}
+
+.motivational-text {
+    color: #94a3b8;
+    margin: 2rem 0;
+    line-height: 1.6;
+}
+
+.finish-btn {
+    background: #8b5cf6;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-weight: 800;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .ec-main {
+        grid-template-columns: 1fr;
+    }
+
+    .ec-grid-view {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .ec-cell {
+        width: 35px;
+        height: 35px;
+    }
+
+    .ec-cell input {
+        font-size: 1.2rem;
+    }
+}

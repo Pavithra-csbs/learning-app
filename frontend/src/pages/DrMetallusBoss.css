@@ -1,0 +1,95 @@
+.metallurgical-theme {
+    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%);
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+.boss-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.boss-avatar {
+    font-size: 8rem;
+    margin-bottom: -1rem;
+    text-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+.mission-bubble {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+}
+
+.boss-name {
+    font-size: 0.9rem;
+    color: #3b82f6;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.mission-bubble .text {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.options-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.opt-row {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.opt-row:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+}
+
+.victory-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5rem;
+    border-radius: 50px;
+    border: 1px solid #3b82f6;
+}
+
+.badge {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+}
+
+.finish-btn {
+    margin-top: 3rem;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 1.5rem 4rem;
+    border-radius: 20px;
+    font-weight: 800;
+}

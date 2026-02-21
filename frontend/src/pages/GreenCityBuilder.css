@@ -1,0 +1,233 @@
+.gcb-container {
+    min-height: 100vh;
+    background: #020617;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.gcb-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #10b981;
+}
+
+.sustainability-meter {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.score-val {
+    margin-left: 0.5rem;
+    transition: 0.3s;
+}
+
+.gcb-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+}
+
+.builder-dashboard {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.builder-dashboard h3 {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.building-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.build-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.build-btn:hover {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+}
+
+.build-btn.pollutant {
+    border-color: #f43f5e;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.build-icon {
+    font-size: 2rem;
+}
+
+.build-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background: #0f172a;
+    padding: 1.5rem;
+    border-radius: 30px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.city-slot {
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px dashed rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.city-slot:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #10b981;
+}
+
+.placed-building {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.placed-icon {
+    font-size: 3.5rem;
+}
+
+.placed-name {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #10b981;
+}
+
+.empty-slot {
+    font-size: 2rem;
+    color: #1e293b;
+    font-weight: 100;
+}
+
+.gcb-controls {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.finish-btn-main {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.reset-btn {
+    background: rgba(244, 63, 94, 0.1);
+    color: #f43f5e;
+    border: 1px solid #f43f5e;
+    padding: 1.2rem 2rem;
+    border-radius: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.gcb-finish-screen {
+    min-height: 100vh;
+    background: #064e3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gcb-result-card {
+    background: #0a0a0a;
+    padding: 4rem;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid #10b981;
+    width: 450px;
+}
+
+.stars-row {
+    font-size: 3.5rem;
+    margin: 1.5rem 0;
+}
+
+.final-score {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #10b981;
+}
+
+.motivational-text {
+    color: #94a3b8;
+    margin: 2rem 0;
+    line-height: 1.6;
+}
+
+.finish-btn {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 15px;
+    font-weight: 800;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .gcb-main {
+        grid-template-columns: 1fr;
+    }
+
+    .city-grid {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+}

@@ -1,0 +1,310 @@
+.power-puzzle-container {
+    width: 100vw;
+    height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.puzzle-header {
+    height: 80px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 1px solid #1e293b;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.formula-bar {
+    display: flex;
+    gap: 20px;
+    background: rgba(251, 191, 36, 0.1);
+    padding: 8px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.formula {
+    font-weight: 900;
+    color: #fbbf24;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.divider {
+    color: #334155;
+}
+
+.puzzle-arena {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    padding: 40px;
+    gap: 40px;
+}
+
+.mission-control {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mission-card {
+    background: #0f172a;
+    border-radius: 32px;
+    padding: 40px;
+    border: 1px solid #1e293b;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.mission-card h3 {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #64748b;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.mission-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.given-data {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.data-pill {
+    background: #1e293b;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-pill .key {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 900;
+}
+
+.data-pill .val {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+.input-zone {
+    display: flex;
+    gap: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.power-input {
+    width: 100%;
+    background: #020617;
+    border: 2px solid #1e293b;
+    border-radius: 16px;
+    padding: 15px 60px 15px 20px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.power-input:focus {
+    border-color: #fbbf24;
+}
+
+.unit-label {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 900;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+.check-btn {
+    background: #fbbf24;
+    color: #451a03;
+    border: none;
+    padding: 0 30px;
+    border-radius: 16px;
+    font-weight: 900;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.check-btn:hover {
+    transform: scale(1.05);
+}
+
+.feedback-msg {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.feedback-msg.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.feedback-msg.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.utility-calculator {
+    background: #0f172a;
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid #1e293b;
+}
+
+.calc-display {
+    background: #020617;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #fbbf24;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calc-btn {
+    background: #1e293b;
+    border: none;
+    color: white;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.calc-btn:hover {
+    background: #334155;
+}
+
+.calc-btn.equal {
+    background: #fbbf24;
+    color: #451a03;
+    grid-column: span 2;
+}
+
+.visual-feedback-area {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.circuit-schematic {
+    background: #0a0f1c;
+    border-radius: 24px;
+    border: 1px solid #1e293b;
+    padding: 20px;
+}
+
+.power-svg {
+    width: 100%;
+}
+
+.power-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tip {
+    background: rgba(56, 189, 248, 0.05);
+    border-left: 4px solid #38bdf8;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.finish-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.victory-modal {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    border: 1px solid #1e293b;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 0 100px rgba(251, 191, 36, 0.1);
+}
+
+.star-burst {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.result-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.result-stats span {
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: #64748b;
+    letter-spacing: 2px;
+}
+
+.done-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .puzzle-arena {
+        grid-template-columns: 1fr;
+    }
+}

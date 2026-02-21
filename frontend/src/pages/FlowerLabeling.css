@@ -1,0 +1,235 @@
+.flower-label-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1e1b4b, #312e81);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.fl-header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.fl-back {
+    background: none;
+    border: 1px solid #f472b6;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.fl-score {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #f472b6;
+}
+
+.fl-game-area {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+}
+
+.fl-labels-bank {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fl-label-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.fl-label-btn {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.fl-label-btn:hover:not(.placed) {
+    background: rgba(244, 114, 182, 0.2);
+}
+
+.fl-label-btn.active {
+    background: #f472b6;
+    border-color: #fce7f3;
+    transform: scale(1.05);
+}
+
+.fl-label-btn.placed {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: #4ade80;
+    opacity: 0.5;
+    color: #4ade80;
+}
+
+.fl-hint {
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    opacity: 0.6;
+    line-height: 1.4;
+}
+
+.fl-diagram-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 450px;
+    position: relative;
+}
+
+.flower-schematic {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drop-zone {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 800;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.drop-zone:hover {
+    border-color: #f472b6;
+    background: rgba(244, 114, 182, 0.1);
+}
+
+.drop-zone.filled {
+    border-style: solid;
+    background: #fff;
+    color: #000;
+    scale: 1.1;
+}
+
+.stigma-zone {
+    top: 20px;
+}
+
+.ovary-zone {
+    bottom: 120px;
+}
+
+.anther-zone {
+    top: 100px;
+    left: 60px;
+}
+
+.petal-zone {
+    top: 80px;
+    right: 50px;
+    width: 100px;
+    height: 60px;
+    border-radius: 50% 50% 10% 10%;
+}
+
+.sepal-zone {
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+}
+
+/* Visual styles for the flower parts */
+.flower-core {
+    position: absolute;
+    bottom: 80px;
+    width: 40px;
+    height: 200px;
+    background: #4ade80;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pistil-tube {
+    width: 10px;
+    flex: 1;
+    background: #22c55e;
+}
+
+.flower-stamen-left {
+    position: absolute;
+    bottom: 120px;
+    left: 140px;
+    transform: rotate(-30deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stamen-filament {
+    width: 4px;
+    height: 100px;
+    background: #fbbf24;
+}
+
+.fl-info-panel {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.fl-info-content h4 {
+    color: #f472b6;
+    margin-bottom: 0.5rem;
+}
+
+.fl-info-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #94a3b8;
+}
+
+.fl-finish-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4c1d95;
+}
+
+.fl-result-card {
+    background: #1e1b4b;
+    padding: 4rem;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #f472b6;
+    max-width: 500px;
+    width: 90%;
+}

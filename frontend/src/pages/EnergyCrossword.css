@@ -1,0 +1,176 @@
+.crossword-game-container {
+    min-height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.game-arena {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    overflow-y: auto;
+}
+
+.crossword-layout {
+    display: flex;
+    gap: 50px;
+    background: #0f172a;
+    padding: 40px;
+    border-radius: 32px;
+    border: 1px solid #1e293b;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.grid-row {
+    display: flex;
+    gap: 4px;
+}
+
+.cell {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.cell.active {
+    background: #1e293b;
+    color: #fbbf24;
+    border: 1px solid #334155;
+}
+
+.cell.active:focus {
+    outline: 2px solid #3b82f6;
+    background: #334155;
+}
+
+.cell.empty {
+    background: transparent;
+    visibility: hidden;
+}
+
+.cell.filled {
+    background: #334155;
+    border-color: #fbbf24;
+}
+
+.clues-panel {
+    width: 300px;
+}
+
+.clues-panel h2 {
+    color: #3b82f6;
+    margin-top: 0;
+}
+
+.clues-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.clue-item {
+    padding: 15px;
+    background: #1e293b;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    opacity: 0.8;
+}
+
+.clue-item.solved {
+    opacity: 1;
+    border: 1px solid #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.clue-num {
+    font-weight: 900;
+    color: #fbbf24;
+}
+
+.clue-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.clue-item.solved p {
+    color: #10b981;
+    text-decoration: line-through;
+}
+
+.victory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 6, 23, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.victory-card {
+    background: #0f172a;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+}
+
+.stars {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.stars span {
+    color: #334155;
+}
+
+.stars span.gold {
+    color: #fbbf24;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.next-level-btn {
+    margin-top: 30px;
+    background: #3b82f6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}

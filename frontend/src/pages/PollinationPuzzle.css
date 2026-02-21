@@ -1,0 +1,159 @@
+.pollination-puzzle-container {
+    min-height: 100vh;
+    background: #020617;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.pp-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #fbbf24;
+}
+
+.pp-back {
+    background: none;
+    border: 1px solid #fbbf24;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pp-hint-btn {
+    background: #fbbf24;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pp-game-area {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.pp-instructions {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.pp-puzzle-grid {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pp-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.pp-step-item {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.pp-step-item:active {
+    cursor: grabbing;
+    scale: 1.02;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: #fbbf24;
+}
+
+.pp-step-num {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #fbbf24;
+}
+
+.pp-step-icon {
+    font-size: 1.5rem;
+}
+
+.pp-step-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #cbd5e1;
+}
+
+.drag-handle {
+    color: #475569;
+    font-size: 1.2rem;
+}
+
+.pp-hint-box {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px dashed #fbbf24;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    color: #fde68a;
+}
+
+.pp-check-btn {
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    color: #000;
+    border: none;
+    padding: 1.2rem 4rem;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+}
+
+.pp-finish-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #92400e;
+}
+
+.pp-result-card {
+    background: #1e1b4b;
+    padding: 4rem;
+    border-radius: 40px;
+    text-align: center;
+    border: 2px solid #fbbf24;
+    max-width: 500px;
+    width: 90%;
+}
