@@ -205,8 +205,8 @@ Format:
                 from langchain_core.prompts import PromptTemplate
                 from langchain_core.output_parsers import JsonOutputParser
                 
-                print("RAG_DEBUG: Prompting Ollama (mistral)...")
-                llm = ChatOllama(model="mistral", temperature=0.4)
+                print("RAG_DEBUG: Prompting Ollama (llama3.2:1b)...")
+                llm = ChatOllama(model="llama3.2:1b", temperature=0.4)
                 chain = PromptTemplate.from_template(prompt_template) | llm | JsonOutputParser()
                 result = chain.invoke({
                     "context": context_text, 
@@ -225,3 +225,90 @@ Format:
             return {"questions": STATIC_FALLBACK_QUIZ[std_str][subject]}
             
         return {"error": "No curriculum found for this topic yet! 🤖"}
+
+    def generate_text_explanation(self, standard, subject, topic):
+        """Generates detailed text explanation for a given topic using RAG."""
+        self._load_config()
+        
+        print(f"--- RAG_DEBUG: GENERATING TEXT FOR TOPIC: {topic} ---")
+        context_text = ""
+        
+        # Initialize vector database if not already done
+        if self.initialize_vector_db():
+            try:
+                print(f"RAG_DEBUG: Searching context for: {subject} Class {standard} {topic}")
+                retriever = self.vector_store.as_retriever(search_kwargs={"k": 4})  # Reduced chunks for faster generation
+                print("RAG_DEBUG: Invoking retriever...")
+                docs = retriever.invoke(f"NCERT Class {standard} {subject} {topic}")
+                print(f"RAG_DEBUG: Found {len(docs)} relevant documents.")
+                context_text = "\n\n".join([doc.page_content for doc in docs])
+                print(f"RAG_DEBUG: Context retrieved ({len(context_text)} chars).")
+            except Exception as e:
+                print(f"RAG_DEBUG: ERROR in context search: {e}")
+                import traceback
+                traceback.print_exc()
+                return {"error": f"Failed to retrieve context: {str(e)}"}
+        else:
+            return {"error": "Vector database not initialized. Please ensure PDFs are ingested."}
+
+        if not context_text:
+            return {"error": f"No content found for topic '{topic}' in Class {standard} {subject}"}
+
+        # Generate concise explanation using LLM
+        prompt_template = """
+You are an NCERT teacher for Class {standard}. Based on the NCERT textbook content below, write a clear, concise explanation.
+
+Topic: {topic}
+Subject: {subject}
+Class: {standard}
+
+NCERT Context:
+{context}
+
+Instructions:
+1. Write a brief, student-friendly explanation (200-300 words)
+2. Use simple language for Class {standard} students
+3. Include 3-4 key points or definitions
+4. Use examples from the text if available
+5. Keep it concise and focused
+6. Only use information from the context provided
+
+Write clearly and engagingly.
+"""
+        
+        try:
+            from langchain_core.prompts import PromptTemplate
+            
+            print("RAG_DEBUG: Prompting LLM for text generation...")
+            llm = ChatOllama(model="llama3.2:1b", temperature=0.5, num_predict=400)  # Limit output length
+            chain = PromptTemplate.from_template(prompt_template) | llm
+            
+            result = chain.invoke({
+                "context": context_text,
+                "standard": standard,
+                "subject": subject,
+                "topic": topic
+            })
+            
+            print("RAG_DEBUG: Text generation successful.")
+            
+            # Extract the content from the result
+            if hasattr(result, 'content'):
+                generated_text = result.content
+            else:
+                generated_text = str(result)
+                
+            return {
+                "status": "success",
+                "topic": topic,
+                "subject": subject,
+                "standard": standard,
+                "content": generated_text,
+                "source": "NCERT Textbook"
+            }
+            
+        except Exception as e:
+            print(f"RAG_DEBUG: LLM Generation FAILED: {e}")
+            import traceback
+            traceback.print_exc()
+            return {"error": f"Failed to generate text: {str(e)}"}

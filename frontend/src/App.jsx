@@ -7,6 +7,7 @@ import TopicContent from './pages/TopicContent';
 import Leaderboard from './pages/Leaderboard';
 import LeaderboardPage from './pages/LeaderboardPage';
 import TeacherDashboard from './pages/TeacherDashboard';
+import AILearnTopic from './pages/AILearnTopic';
 import { Toaster } from 'react-hot-toast'; // Need to install this, or use simple alerts
 
 import TeacherDashboardLive from './pages/TeacherDashboardLive';
@@ -199,6 +200,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/puzzle" element={<Puzzle />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="/ai-learn" element={<AILearnTopic />} />
             <Route path="/teacher" element={<TeacherDashboard />} />
             <Route path="/ray-optics/:topicId" element={<RayDrawingGame />} />
             <Route path="/mirror-maze/:topicId" element={<MirrorMaze />} />

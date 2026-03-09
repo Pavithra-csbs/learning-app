@@ -67,3 +67,45 @@ def ingest_pdf():
         
     result = rag_service.ingest_pdf(filename)
     return jsonify(result)
+
+@quiz_generator_bp.route('/api/generate-text', methods=['POST'])
+@jwt_required()
+def generate_text():
+    """Generate detailed text explanation for a topic using RAG."""
+    print("DEBUG: generate_text endpoint reached")
+    data = request.get_json()
+    user_id = get_jwt_identity()
+    print(f"DEBUG: User Identity from JWT: {user_id}")
+    
+    user = User.query.get(int(user_id))
+    if not user:
+        print("DEBUG: User not found in database")
+        return jsonify({"error": "User not found"}), 404
+        
+    if not user.student_profile:
+        print("DEBUG: Student profile not found for user")
+        return jsonify({"error": "Student profile not found"}), 404
+        
+    # Get parameters
+    standard = user.student_profile.grade
+    subject = data.get('subject')
+    topic = data.get('topic')
+    
+    print(f"DEBUG: Request Params - Standard: {standard}, Subject: {subject}, Topic: {topic}")
+    
+    if not all([subject, topic]):
+        return jsonify({"error": "Missing required fields (subject, topic)"}), 400
+        
+    try:
+        result = rag_service.generate_text_explanation(standard, subject, topic)
+        print(f"DEBUG: RAG Text Generation Result: {result.get('status') if isinstance(result, dict) else 'Generated'}")
+        
+        if isinstance(result, dict) and "error" in result:
+            return jsonify(result), 400
+            
+        return jsonify(result), 200
+    except Exception as e:
+        print(f"DEBUG: ERROR in generate_text: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500

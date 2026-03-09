@@ -43,6 +43,41 @@
     border-color: #60efff;
 }
 
+.ai-learn-btn-floating {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ai-learn-btn-floating:hover {
+    transform: scale(1.1) rotate(-5deg);
+    background: rgba(16, 185, 129, 0.4);
+    border-color: #34d399;
+}
+
+.pulse-aura-green {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.2);
+    z-index: -1;
+    animation: auraPulse 2s infinite;
+}
+
 .pulse-aura {
     position: absolute;
     top: -5px;

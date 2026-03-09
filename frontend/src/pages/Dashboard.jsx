@@ -51,6 +51,15 @@ const Dashboard = () => {
 
                 <div className="floating-actions-container">
                     <button
+                        className="ai-learn-btn-floating"
+                        onClick={() => navigate('/ai-learn')}
+                        title="AI Learn Topics"
+                    >
+                        ✨
+                        <span className="pulse-aura-green"></span>
+                    </button>
+
+                    <button
                         className="ai-coach-btn-floating"
                         onClick={() => setIsAICoachOpen(true)}
                         title="AI Learning Coach"

@@ -13,8 +13,9 @@ export const AuthProvider = ({ children }) => {
     });
     const [loading, setLoading] = useState(false);
 
-    // Set default base URL for axios
-    axios.defaults.baseURL = 'http://localhost:5020';
+    // Don't set baseURL in development - use Vite proxy
+    // In production, you'd set this via environment variable
+    // axios.defaults.baseURL = 'http://localhost:5020';
 
     useEffect(() => {
         // Add a request interceptor to attach the JWT token
