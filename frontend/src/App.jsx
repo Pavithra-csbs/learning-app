@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import QuizArena from './pages/QuizArena';
@@ -184,7 +185,8 @@ function App() {
       <Router>
         <div className="min-h-screen bg-game-bg">
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/world-selection" element={<WorldSelection />} />
             <Route path="/map" element={<Dashboard />} />
             <Route path="/learn/:levelId" element={<ChapterSelection />} />

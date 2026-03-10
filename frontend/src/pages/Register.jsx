@@ -28,7 +28,7 @@ const Register = () => {
                 standard
             });
             // Redirect to login after successful registration
-            navigate('/');
+            navigate('/login');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration Failed ❌');
         } finally {
@@ -111,7 +111,7 @@ const Register = () => {
                     </form>
                     <div className="auth-switch">
                         Already have an account?
-                        <span onClick={() => navigate('/')}>Sign In</span>
+                        <span onClick={() => navigate('/login')}>Sign In</span>
                     </div>
                 </div>
             </motion.div>

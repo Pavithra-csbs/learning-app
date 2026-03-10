@@ -1,10 +1,12 @@
+# ======================
 # Python
+# ======================
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Virtual environment
+# Virtual environments
 .venv/
 venv/
 
@@ -12,24 +14,46 @@ venv/
 .env
 .env.*
 
-# Database
+# ======================
+# Databases
+# ======================
 *.db
 *.sqlite3
 
-# Node
-node_modules/
+# ======================
+# Logs
+# ======================
+*.log
 
-# Build
+# ======================
+# AI / RAG Data
+# ======================
+vector_db/
+data/vector_db/
+data/vector_db_ollama/
+data/theory_cache/
+
+# Large datasets
+data/ncert_pdfs/
+
+# ======================
+# Node / React
+# ======================
+node_modules/
+frontend/node_modules/
+
+# Build files
 dist/
 build/
 
-# Logs
-*.log
-
-# OS
+# ======================
+# OS files
+# ======================
 .DS_Store
 Thumbs.db
 
-# Editor
+# ======================
+# Editor settings
+# ======================
 .vscode/
 .idea/
